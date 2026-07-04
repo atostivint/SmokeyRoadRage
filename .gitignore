@@ -3,7 +3,7 @@
 /android/
 
 # Local-only AI helper plugin (not shared with the team)
-/addons/godot_ai/
+/addons
 /override.cfg
 
 # Local-only Claude Code guidance (not shared with the team)
