@@ -15,6 +15,7 @@
 [ext_resource type="PackedScene" uid="uid://d40tj2s2qf11" path="res://Scenes/car.tscn" id="13_lao4m"]
 [ext_resource type="Script" uid="uid://cdndpoi13wex8" path="res://Scripts/path_follow_3d.gd" id="14_rdm1n"]
 [ext_resource type="PackedScene" uid="uid://c0y7unayyoqog" path="res://Scenes/rock.tscn" id="15_1ngty"]
+[ext_resource type="PackedScene" uid="uid://c44uangmwmm61" path="res://Scenes/stump.tscn" id="16_72n28"]
 
 [sub_resource type="HeightMapShape3D" id="HeightMapShape3D_ssidi"]
 map_width = 200
@@ -235,3 +236,6 @@ chasing = NodePath("../WayOne/PathFollow3D")
 
 [node name="Node3D" parent="." unique_id=758862993 instance=ExtResource("15_1ngty")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.9403005, 0, -7.970829)
+
+[node name="Node3D2" parent="." unique_id=1472662052 instance=ExtResource("16_72n28")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.512809, 0.16980106, -12.036437)
