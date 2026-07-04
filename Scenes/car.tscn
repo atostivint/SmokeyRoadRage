@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://cqwwfm7jo1hf1" path="res://Scripts/car.gd" id="1_wqo35"]
 [ext_resource type="Texture2D" uid="uid://c2wgjw35s3saa" path="res://Visuals/Images/Car.png" id="2_1sfmx"]
+[ext_resource type="Texture2D" uid="uid://dle8y3dxnvqcp" path="res://Visuals/Images/Wheel.png" id="3_1sfmx"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_ssidi"]
 size = Vector3(2, 1.8, 4)
@@ -23,4 +24,11 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.2486312, -0.5578277)
 current = true
 
 [node name="SpotLight3D" type="SpotLight3D" parent="." unique_id=1528842272]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.3368106, 0)
+spot_range = 11.300945
+spot_attenuation = 0.8
 spot_angle = 23.066906
+
+[node name="Wheel" type="Sprite3D" parent="." unique_id=1286094733]
+transform = Transform3D(0.38274723, 0, 0, 0, 0.38274723, 0, 0, 0, 1, -0.5286701, 0.56751454, -1.8393433)
+texture = ExtResource("3_1sfmx")

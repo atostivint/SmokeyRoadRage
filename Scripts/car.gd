@@ -1,5 +1,9 @@
 extends RigidBody3D
 
-# Called when the node enters the scene tree for the first time.
-func _ready() -> void:
-	pass # Replace with function body.
+@export var chasing : Node3D
+
+func _physics_process(delta: float) -> void:
+	if chasing != null :
+		var chasing_distance = chasing.global_position - global_position
+		global_position += (chasing_distance *0.3)
+	pass
