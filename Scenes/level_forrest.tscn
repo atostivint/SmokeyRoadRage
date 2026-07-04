@@ -14,6 +14,7 @@
 [ext_resource type="PackedScene" uid="uid://dglgfludf424c" path="res://Visuals/Models/TwistedTree_4.fbx" id="12_cqn3y"]
 [ext_resource type="PackedScene" uid="uid://d40tj2s2qf11" path="res://Scenes/car.tscn" id="13_lao4m"]
 [ext_resource type="Script" uid="uid://cdndpoi13wex8" path="res://Scripts/path_follow_3d.gd" id="14_rdm1n"]
+[ext_resource type="PackedScene" uid="uid://c0y7unayyoqog" path="res://Scenes/rock.tscn" id="15_1ngty"]
 
 [sub_resource type="HeightMapShape3D" id="HeightMapShape3D_ssidi"]
 map_width = 200
@@ -231,3 +232,6 @@ curve = SubResource("Curve3D_lao4m")
 [node name="Car" parent="." unique_id=1688270510 node_paths=PackedStringArray("chasing") instance=ExtResource("13_lao4m")]
 transform = Transform3D(0.9999972, 0, 0, 0, 0.99999994, 0, 0, 0, 0.9999968, -20.382103, 0.13990916, -0.005231383)
 chasing = NodePath("../WayOne/PathFollow3D")
+
+[node name="Node3D" parent="." unique_id=758862993 instance=ExtResource("15_1ngty")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.9403005, 0, -7.970829)
