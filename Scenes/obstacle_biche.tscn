@@ -1,0 +1,16 @@
+[gd_scene format=3 uid="uid://c8n2mfslkbpqx"]
+
+[ext_resource type="PackedScene" uid="uid://bd1gdfi5hbnd8" path="res://Scenes/obstacle.tscn" id="1_base"]
+[ext_resource type="Texture2D" uid="uid://c34p48hs451ju" path="res://Visuals/Images/OhDeer.png" id="2_sprite"]
+
+[node name="ObstacleCampeur" unique_id=110335833 instance=ExtResource("1_base")]
+categorie = 1
+degats = 15
+points = 20
+
+[node name="CollisionShape3D" parent="." index="0" unique_id=1048116789]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.16460383, 0)
+
+[node name="Sprite3D" type="Sprite3D" parent="Modele" parent_id_path=PackedInt32Array(207732214) index="0" unique_id=1684813222]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.2826738, 0)
+texture = ExtResource("2_sprite")
