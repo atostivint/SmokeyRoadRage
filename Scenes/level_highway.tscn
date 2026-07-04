@@ -25,6 +25,7 @@ script = ExtResource("4_eo2fu")
 material_resource = ExtResource("5_1b3a5")
 use_lowpoly_preview = true
 generate_ai_lanes = true
+ai_lane_group = "ai_road_lanes"
 auto_free_vehicles = false
 draw_lanes_editor = true
 draw_lanes_game = true
@@ -139,3 +140,19 @@ next_pt_init = NodePath("../RP_009")
 
 [node name="Car" parent="." unique_id=1137895666 instance=ExtResource("7_car")]
 transform = Transform3D(0.6665726, 0, -0.7454402, 0, 1, 0, 0.7454402, 0, 0.6665726, 344.6723, 6.7808495, -927.7905)
+vitesse = 30.0
+
+[node name="ObstacleCampeur3" parent="." unique_id=1264606203 instance=ExtResource("1_r8dhe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 335.71057, 0, -890.4514)
+
+[node name="ObstacleCampeur4" parent="." unique_id=890259127 instance=ExtResource("1_r8dhe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 338.0654, -3.8146973e-06, -855.17175)
+
+[node name="ObstacleCampeur5" parent="." unique_id=1465794736 instance=ExtResource("1_r8dhe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 319.12234, 0, -806.2844)
+
+[node name="ObstacleCampeur6" parent="." unique_id=1175007737 instance=ExtResource("1_r8dhe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 281.74734, 0, -768.4208)
+
+[node name="ObstacleCampeur7" parent="." unique_id=767418238 instance=ExtResource("1_r8dhe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 293.84912, 0, -723.85394)
