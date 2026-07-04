@@ -1,0 +1,25 @@
+[gd_scene format=3 uid="uid://d40tj2s2qf11"]
+
+[ext_resource type="Script" uid="uid://cqwwfm7jo1hf1" path="res://Scenes/car.gd" id="1_wqo35"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_ssidi"]
+size = Vector3(2, 1.8, 4)
+
+[node name="Car" type="RigidBody3D" unique_id=1137895666]
+script = ExtResource("1_wqo35")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=2033462056]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.9, 0)
+shape = SubResource("BoxShape3D_ssidi")
+
+[node name="Sprite3D" type="Sprite3D" parent="." unique_id=1190078524]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.90000004, -2)
+
+[node name="Camera3D" type="Camera3D" parent="." unique_id=818640273]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.3903935, -0.94496703)
+current = true
+
+[node name="SpotLight3D" type="SpotLight3D" parent="." unique_id=1528842272]
+spot_angle = 23.066906
+
+[node name="SpringArm3D" type="SpringArm3D" parent="." unique_id=1130889976]
