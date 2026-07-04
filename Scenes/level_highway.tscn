@@ -1,7 +1,6 @@
 [gd_scene format=3 uid="uid://bh8jqfoto4b0w"]
 
 [ext_resource type="PackedScene" uid="uid://c8n2mfslkbpqx" path="res://Scenes/obstacle_biche.tscn" id="1_r8dhe"]
-[ext_resource type="PackedScene" uid="uid://boiv26se3ucg6" path="res://Scenes/obstacle_campeur.tscn" id="2_oigvy"]
 [ext_resource type="Script" uid="uid://bxp3i4cnonh8y" path="res://addons/road-generator/nodes/road_manager.gd" id="3_j5pv8"]
 [ext_resource type="Script" uid="uid://cph7euje06kel" path="res://addons/road-generator/nodes/road_container.gd" id="4_eo2fu"]
 [ext_resource type="Material" uid="uid://dpashsuk5lr4x" path="res://addons/road-generator/resources/road_texture.material" id="5_1b3a5"]
@@ -10,11 +9,6 @@
 [ext_resource type="PackedScene" uid="uid://d40tj2s2qf11" path="res://Scenes/car.tscn" id="7_car"]
 
 [node name="LevelHighway" type="Node3D" unique_id=1453296238]
-
-[node name="ObstacleCampeur" parent="." unique_id=110335833 instance=ExtResource("1_r8dhe")]
-
-[node name="ObstacleCampeur2" parent="." unique_id=350731787 instance=ExtResource("2_oigvy")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0, 0)
 
 [node name="RoadManager" type="Node3D" parent="." unique_id=1693690641]
 script = ExtResource("3_j5pv8")
@@ -144,15 +138,25 @@ vitesse = 30.0
 
 [node name="ObstacleCampeur3" parent="." unique_id=1264606203 instance=ExtResource("1_r8dhe")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 335.71057, 0, -890.4514)
+orienter_perpendiculaire_a_la_voie = null
+inverser_direction = null
 
 [node name="ObstacleCampeur4" parent="." unique_id=890259127 instance=ExtResource("1_r8dhe")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 338.0654, -3.8146973e-06, -855.17175)
+orienter_perpendiculaire_a_la_voie = null
+inverser_direction = null
 
 [node name="ObstacleCampeur5" parent="." unique_id=1465794736 instance=ExtResource("1_r8dhe")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 319.12234, 0, -806.2844)
+orienter_perpendiculaire_a_la_voie = null
+inverser_direction = null
 
 [node name="ObstacleCampeur6" parent="." unique_id=1175007737 instance=ExtResource("1_r8dhe")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 281.74734, 0, -768.4208)
+orienter_perpendiculaire_a_la_voie = null
+inverser_direction = null
 
 [node name="ObstacleCampeur7" parent="." unique_id=767418238 instance=ExtResource("1_r8dhe")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 293.84912, 0, -723.85394)
+orienter_perpendiculaire_a_la_voie = null
+inverser_direction = null
