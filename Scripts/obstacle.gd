@@ -18,6 +18,15 @@ extends Area3D
 ## proche de la voie la plus proche du groupe ci-dessus.
 @export_tool_button("Coller à la voie la plus proche") var coller_a_la_voie_bouton: Callable = Callable(self, "coller_a_la_voie")
 
+## Si coché, la fonction "Coller à la voie" tourne aussi l'obstacle pour
+## qu'il soit perpendiculaire à la voie (ex: un piéton qui traverse la
+## route). Si décoché, l'obstacle garde sa rotation actuelle.
+@export var orienter_perpendiculaire_a_la_voie: bool = true
+
+## Inverse le sens de la traversée (utile si le piéton/animal doit sembler
+## traverser dans l'autre sens, dos à la route plutôt que face à la route).
+@export var inverser_direction: bool = false
+
 enum Categorie {
 	DECOR,            # arbres, cailloux... impact = Game Over instantané
 	ANIMAL_INNOCENT,  # innocents, impact = dégâts + sang + pénalité de score
@@ -65,19 +74,50 @@ func coller_a_la_voie() -> void:
 
 	var meilleure_position := global_position
 	var meilleure_distance := INF
+	var meilleure_voie: Path3D = null
+	var meilleur_offset := 0.0
 
 	for voie in voies:
 		if not voie is Path3D:
 			continue
 		var position_locale: Vector3 = voie.to_local(global_position)
-		var point_local: Vector3 = voie.curve.get_closest_point(position_locale)
+		var offset_local: float = voie.curve.get_closest_offset(position_locale)
+		var point_local: Vector3 = voie.curve.sample_baked(offset_local)
 		var point_global: Vector3 = voie.to_global(point_local)
 		var distance := global_position.distance_to(point_global)
 		if distance < meilleure_distance:
 			meilleure_distance = distance
 			meilleure_position = point_global
+			meilleure_voie = voie
+			meilleur_offset = offset_local
 
 	global_position = meilleure_position
+
+	if orienter_perpendiculaire_a_la_voie and meilleure_voie != null:
+		orienter_perpendiculaire(meilleure_voie, meilleur_offset)
+
+## Calcule la direction de la voie (tangente de la courbe) à "offset", la
+## fait pivoter de 90° pour obtenir la direction perpendiculaire (celle
+## d'une traversée), puis oriente l'obstacle vers cette direction.
+func orienter_perpendiculaire(voie: Path3D, offset: float) -> void:
+	var epsilon := 0.05
+	var longueur: float = voie.curve.get_baked_length()
+	var offset_avant: float = clamp(offset + epsilon, 0.0, longueur)
+	var offset_arriere: float = clamp(offset - epsilon, 0.0, longueur)
+	var point_avant: Vector3 = voie.to_global(voie.curve.sample_baked(offset_avant))
+	var point_arriere: Vector3 = voie.to_global(voie.curve.sample_baked(offset_arriere))
+
+	var tangente := (point_avant - point_arriere)
+	tangente.y = 0.0
+	if tangente.length_squared() < 0.0001:
+		return
+	tangente = tangente.normalized()
+
+	var perpendiculaire := tangente.rotated(Vector3.UP, PI)
+	if inverser_direction:
+		perpendiculaire = -perpendiculaire
+
+	look_at(global_position + perpendiculaire, Vector3.UP)
 
 func _on_body_entered(body: Node) -> void:
 	if body.name != "Car":
