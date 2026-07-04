@@ -2,17 +2,20 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bwffnxs37n76n"
-path.s3tc="res://.godot/imported/BearArm.png-7ab8c9fd76013fee8b19f83bdf636081.s3tc.ctex"
+uid="uid://cehxedxdensy"
+path.s3tc="res://.godot/imported/Stump01_Textures.png-1c88c3a29939ab469a1e9f70a9adb758.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
 }
+generator_parameters={
+"md5": "a1970043ca43b48fe0514c021c7cf477"
+}
 
 [deps]
 
-source_file="res://Visuals/Images/BearArm.png"
-dest_files=["res://.godot/imported/BearArm.png-7ab8c9fd76013fee8b19f83bdf636081.s3tc.ctex"]
+source_file="res://Visuals/Models/Homemade/Stump01_Textures.png"
+dest_files=["res://.godot/imported/Stump01_Textures.png-1c88c3a29939ab469a1e9f70a9adb758.s3tc.ctex"]
 
 [params]
 
