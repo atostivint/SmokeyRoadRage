@@ -22,7 +22,6 @@ generate_ai_lanes = true
 ai_lane_group = "ai_road_lanes"
 auto_free_vehicles = false
 draw_lanes_editor = true
-draw_lanes_game = true
 edge_containers = Array[NodePath]([NodePath("")])
 edge_rp_targets = Array[NodePath]([NodePath("")])
 edge_rp_target_dirs = Array[int]([-1])
@@ -33,11 +32,6 @@ metadata/_custom_type_script = "uid://cph7euje06kel"
 [node name="RoadLaneAgent" type="Node" parent="RoadManager/RoadContainer" unique_id=187748785]
 script = ExtResource("6_j5pv8")
 metadata/_custom_type_script = "uid://uwkx2tk6pt6u"
-
-[node name="Car" parent="RoadManager/RoadContainer" unique_id=1137895666 node_paths=PackedStringArray("road_lane_agent") instance=ExtResource("7_car")]
-transform = Transform3D(0.6665726, 0, -0.7454402, 0, 1, 0, 0.7454402, 0, 0.6665726, 344.6723, 6.7808495, -927.7905)
-vitesse = 30.0
-road_lane_agent = NodePath("../RoadLaneAgent")
 
 [node name="RP_001" type="Node3D" parent="RoadManager/RoadContainer" unique_id=76932034]
 transform = Transform3D(-0.9963732, 0, -0.08509124, 0, 1, 0, 0.08509124, 0, -0.9963732, 339.3624, 0, -921.51355)
@@ -151,3 +145,8 @@ transform = Transform3D(0.91815877, 0, -0.3962127, 0, 1, 0, 0.3962127, 0, 0.9181
 
 [node name="ObstacleCampeur7" parent="." unique_id=767418238 instance=ExtResource("1_r8dhe")]
 transform = Transform3D(0.8089761, 0, 0.58784133, 0, 1, 0, -0.58784133, 0, 0.8089761, 293.84912, 0, -723.85394)
+
+[node name="Car" parent="." unique_id=1137895666 node_paths=PackedStringArray("road_lane_agent") instance=ExtResource("7_car")]
+transform = Transform3D(0.6665726, 0, -0.7454402, 0, 1, 0, 0.7454402, 0, 0.6665726, 344.6723, 6.7808495, -927.7905)
+vitesse = 30.0
+road_lane_agent = NodePath("../RoadManager/RoadContainer/RoadLaneAgent")
