@@ -4,6 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://c2wgjw35s3saa" path="res://Visuals/Images/Car.png" id="2_1sfmx"]
 [ext_resource type="Texture2D" uid="uid://bwffnxs37n76n" path="res://Visuals/Images/BearArm.png" id="2_yi23e"]
 [ext_resource type="Texture2D" uid="uid://dle8y3dxnvqcp" path="res://Visuals/Images/Wheel.png" id="3_1sfmx"]
+[ext_resource type="Script" path="res://addons/road-generator/nodes/road_lane_agent.gd" id="4_roadagent"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_ssidi"]
 size = Vector3(2, 1.8, 4)
@@ -77,6 +78,10 @@ _data = {
 }
 
 [node name="Car" type="RigidBody3D" unique_id=1137895666]
+gravity_scale = 0.0
+lock_rotation = true
+freeze = true
+freeze_mode = 1
 script = ExtResource("1_wqo35")
 
 [node name="Wheel" type="Sprite3D" parent="." unique_id=1286094733]
