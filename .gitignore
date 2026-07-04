@@ -2,8 +2,7 @@
 .godot/
 /android/
 
-# Local-only AI helper plugin (not shared with the team)
-/addons/godot_ai/
+# Local-only override of project.godot (enables godot_ai without touching the shared plugin list)
 /override.cfg
 
 # Local-only Claude Code guidance (not shared with the team)
