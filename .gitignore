@@ -1,3 +1,7 @@
 # Godot 4+ specific ignores
 .godot/
 /android/
+
+# Local-only AI helper plugin (not shared with the team)
+/addons/godot_ai/
+/override.cfg
