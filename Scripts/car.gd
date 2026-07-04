@@ -1,5 +1,14 @@
 extends RigidBody3D
 
+## Vie de départ (correspond à l'égaliseur radio à terme).
+@export var vie_max: int = 100
+
+var vie: int
+var score: int = 0
+
+signal vie_changee(vie: int, vie_max: int)
+signal score_change(score: int)
+
 ## Vitesse de la voiture en mètres/seconde
 @export var vitesse : float = 15.0
 
@@ -34,11 +43,33 @@ var derniere_position_route : Vector3
 var position_route_initialisee := false
 
 func _ready() -> void:
+	vie = vie_max
+
 	# Au démarrage, on accroche la voiture à la voie de route la plus proche.
 	road_lane_agent.assign_nearest_lane()
 	var lane = road_lane_agent.current_lane
 	if lane and lane.lane_next == NodePath("") and lane.lane_prior != NodePath(""):
 		sens_avancee = -1.0
+
+## Appelée par les obstacles (animaux, piétons) quand ils sont touchés.
+func perdre_vie(degats: int) -> void:
+	vie = max(vie - degats, 0)
+	vie_changee.emit(vie, vie_max)
+	print("Vie: ", vie, "/", vie_max)
+	if vie <= 0:
+		print("Game Over -> plus de vie")
+
+## Appelée par les obstacles quand on gagne ou perd des points.
+func ajouter_points(valeur: int) -> void:
+	score += valeur
+	score_change.emit(score)
+	print("Score: ", score)
+
+## Appelée par les obstacles de type DECOR (arbre, pierre...) : mort immédiate.
+func mourir_instantanement() -> void:
+	vie = 0
+	vie_changee.emit(vie, vie_max)
+	print("Game Over -> collision avec le décor")
 
 func _physics_process(delta: float) -> void:
 	if not is_instance_valid(road_lane_agent.current_lane):
