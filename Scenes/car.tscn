@@ -23,4 +23,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.2486312, -0.5578277)
 current = true
 
 [node name="SpotLight3D" type="SpotLight3D" parent="." unique_id=1528842272]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.3368106, 0)
+spot_range = 11.300945
+spot_attenuation = 0.8
 spot_angle = 23.066906
