@@ -137,26 +137,21 @@ transform = Transform3D(0.6665726, 0, -0.7454402, 0, 1, 0, 0.7454402, 0, 0.66657
 vitesse = 30.0
 
 [node name="ObstacleCampeur3" parent="." unique_id=1264606203 instance=ExtResource("1_r8dhe")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 335.71057, 0, -890.4514)
-orienter_perpendiculaire_a_la_voie = null
+transform = Transform3D(0.9988086, 0, 0.04879904, 0, 1, 0, -0.04879904, 0, 0.9988086, 335.71057, 0, -890.45135)
 inverser_direction = null
 
 [node name="ObstacleCampeur4" parent="." unique_id=890259127 instance=ExtResource("1_r8dhe")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 338.0654, -3.8146973e-06, -855.17175)
-orienter_perpendiculaire_a_la_voie = null
+transform = Transform3D(0.97867006, 0, -0.20543835, 0, 1, 0, 0.20543835, 0, 0.97867006, 337.86786, 0, -855.213)
 inverser_direction = null
 
 [node name="ObstacleCampeur5" parent="." unique_id=1465794736 instance=ExtResource("1_r8dhe")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 319.12234, 0, -806.2844)
-orienter_perpendiculaire_a_la_voie = null
+transform = Transform3D(0.75421906, 0, -0.6566229, 0, 1, 0, 0.6566229, 0, 0.75421906, 319.1222, 0, -806.28424)
 inverser_direction = null
 
 [node name="ObstacleCampeur6" parent="." unique_id=1175007737 instance=ExtResource("1_r8dhe")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 281.74734, 0, -768.4208)
-orienter_perpendiculaire_a_la_voie = null
+transform = Transform3D(0.91815877, 0, -0.3962127, 0, 1, 0, 0.3962127, 0, 0.91815877, 280.62955, 0, -766.0403)
 inverser_direction = null
 
 [node name="ObstacleCampeur7" parent="." unique_id=767418238 instance=ExtResource("1_r8dhe")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 293.84912, 0, -723.85394)
-orienter_perpendiculaire_a_la_voie = null
+transform = Transform3D(0.8089761, 0, 0.58784133, 0, 1, 0, -0.58784133, 0, 0.8089761, 293.84912, 0, -723.85394)
 inverser_direction = null
