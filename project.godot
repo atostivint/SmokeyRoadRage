@@ -50,5 +50,4 @@ turn_left={
 [rendering]
 
 rendering_device/driver.windows="d3d12"
-renderer/rendering_method="forward_plus"
 renderer/rendering_method.macos="gl_compatibility"
