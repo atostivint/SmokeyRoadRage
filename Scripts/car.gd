@@ -21,9 +21,11 @@ signal score_change(score: int)
 ## est douce (moins de mal des transports lors d'un changement de voie).
 @export var vitesse_rotation : float = 6.0
 
-## Le RoadLaneAgent enfant : c'est lui qui sait calculer la prochaine position
+## Le RoadLaneAgent : c'est lui qui sait calculer la prochaine position
 ## le long de la route (voie actuelle + voies suivantes connectées).
-@onready var road_lane_agent : RoadLaneAgent = $RoadLaneAgent
+## Il vit dans la scène du niveau (à côté de la route), pas dans la voiture :
+## à assigner à la main dans l'inspecteur en glissant le nœud RoadLaneAgent.
+@export var road_lane_agent : RoadLaneAgent
 
 ## +1 pour avancer via lane_next, -1 via lane_prior.
 ## Certains RoadPoint de départ sont posés à l'envers de la voie (le "next"
@@ -44,6 +46,11 @@ var position_route_initialisee := false
 
 func _ready() -> void:
 	vie = vie_max
+
+	# Le RoadLaneAgent vit dans la scène du niveau, pas dans la voiture : le
+	# script du plugin devine "qui il pilote" via son parent, ce qui pointerait
+	# ici vers la route et non la voiture. On corrige la référence à la main.
+	road_lane_agent.actor = self
 
 	# Au démarrage, on accroche la voiture à la voie de route la plus proche.
 	road_lane_agent.assign_nearest_lane()

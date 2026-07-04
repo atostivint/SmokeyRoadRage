@@ -4,7 +4,6 @@
 [ext_resource type="Texture2D" uid="uid://c2wgjw35s3saa" path="res://Visuals/Images/Car.png" id="2_1sfmx"]
 [ext_resource type="Texture2D" uid="uid://bwffnxs37n76n" path="res://Visuals/Images/BearArm.png" id="2_yi23e"]
 [ext_resource type="Texture2D" uid="uid://dle8y3dxnvqcp" path="res://Visuals/Images/Wheel.png" id="3_1sfmx"]
-[ext_resource type="Script" path="res://addons/road-generator/nodes/road_lane_agent.gd" id="4_roadagent"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_ssidi"]
 size = Vector3(2, 1.8, 4)
