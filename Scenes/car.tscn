@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://d40tj2s2qf11"]
 
-[ext_resource type="Script" uid="uid://cqwwfm7jo1hf1" path="res://Scenes/car.gd" id="1_wqo35"]
+[ext_resource type="Script" uid="uid://cqwwfm7jo1hf1" path="res://Scripts/car.gd" id="1_wqo35"]
+[ext_resource type="Texture2D" uid="uid://c2wgjw35s3saa" path="res://Visuals/Images/Car.png" id="2_1sfmx"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_ssidi"]
 size = Vector3(2, 1.8, 4)
@@ -12,14 +13,14 @@ script = ExtResource("1_wqo35")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.9, 0)
 shape = SubResource("BoxShape3D_ssidi")
 
-[node name="Sprite3D" type="Sprite3D" parent="." unique_id=1190078524]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.90000004, -2)
+[node name="Board" type="Sprite3D" parent="." unique_id=1190078524]
+transform = Transform3D(0.78440887, 0, 0, 0, 0.78440887, 0, 0, 0, 1, 0, 1.1929755, -2)
+pixel_size = 0.005
+texture = ExtResource("2_1sfmx")
 
 [node name="Camera3D" type="Camera3D" parent="." unique_id=818640273]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.3903935, -0.94496703)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.2486312, -0.5578277)
 current = true
 
 [node name="SpotLight3D" type="SpotLight3D" parent="." unique_id=1528842272]
 spot_angle = 23.066906
-
-[node name="SpringArm3D" type="SpringArm3D" parent="." unique_id=1130889976]

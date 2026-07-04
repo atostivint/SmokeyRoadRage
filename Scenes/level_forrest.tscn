@@ -13,7 +13,7 @@
 [ext_resource type="PackedScene" uid="uid://cq1008n1xuhwr" path="res://Visuals/Models/TwistedTree_2.fbx" id="11_j3a3s"]
 [ext_resource type="PackedScene" uid="uid://dglgfludf424c" path="res://Visuals/Models/TwistedTree_4.fbx" id="12_cqn3y"]
 [ext_resource type="PackedScene" uid="uid://d40tj2s2qf11" path="res://Scenes/car.tscn" id="13_lao4m"]
-[ext_resource type="Script" uid="uid://cdndpoi13wex8" path="res://Scenes/path_follow_3d.gd" id="14_rdm1n"]
+[ext_resource type="Script" uid="uid://cdndpoi13wex8" path="res://Scripts/path_follow_3d.gd" id="14_rdm1n"]
 
 [sub_resource type="HeightMapShape3D" id="HeightMapShape3D_ssidi"]
 map_width = 200
@@ -28,10 +28,11 @@ ambient_light_color = Color(0.07701107, 0.18821457, 0.17599171, 1)
 
 [sub_resource type="Curve3D" id="Curve3D_lao4m"]
 _data = {
-"points": PackedVector3Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -0.6704235, 0, -2.0814304, 0, 0, 0, 0, 0, 0, -0.2975664, 0, -4.3346014, 0, 0, 0, 0, 0, 0, -1.1649702, 0, -8.587369, 0, 0, 0, 0, 0, 0, -0.25169146, 0, -13.477882, 0, 0, 0, 0, 0, 0, 1.2417872, 0, -16.995039, 0, 0, 0, 0, 0, 0, 1.1381152, 0, -20.727255, 0, 0, 0, 0, 0, 0, 0.23544264, 0, -25.1483),
-"tilts": PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0)
+"points": PackedVector3Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -0.655, 0, -1.631, 0, 0, 0, 0, 0, 0, -0.6704235, 0, -2.0814304, 0, 0, 0, 0, 0, 0, -0.28443766, 0, -4.0643363, 0, 0, 0, 0, 0, 0, -0.2975664, 0, -4.3346014, 0, 0, 0, 0, 0, 0, -0.3943255, 0, -4.815683, 0, 0, 0, 0, 0, 0, -0.86659217, 0, -6.749728, 0, 0, 0, 0, 0, 0, -1.0920644, 0, -7.6246705, 0, 0, 0, 0, 0, 0, -1.1649702, 0, -8.587369, 0, 0, 0, 0, 0, 0, -1.0750953, 0, -9.258571, 0, 0, 0, 0, 0, 0, -0.32155657, 0, -13.228676, 0, 0, 0, 0, 0, 0, -0.25169146, 0, -13.477882, 0, 0, 0, 0, 0, 0, -0.009251714, 0, -13.948636, 0, 0, 0, 0, 0, 0, 1.1065235, 0, -16.2859, 0, 0, 0, 0, 0, 0, 1.2417872, 0, -16.995039, 0, 0, 0, 0, 0, 0, 1.2801876, 0, -17.66681, 0, 0, 0, 0, 0, 0, 1.1381152, 0, -20.727255, 0, 0, 0, 0, 0, 0, 1.0734367, 0, -21.120176, 0, 0, 0, 0, 0, 0, 0.23544264, 0, -25.1483),
+"tilts": PackedFloat32Array(0.1, 0, -0.1, 0, 0.1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)
 }
-point_count = 8
+point_count = 19
+up_vector_enabled = false
 
 [node name="LevelForrest" type="Node" unique_id=155785351]
 
@@ -90,7 +91,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.8146677, 0, 0)
 curve = SubResource("Curve3D_lao4m")
 
 [node name="PathFollow3D" type="PathFollow3D" parent="WayOne" unique_id=122325777]
-transform = Transform3D(0.9518429, 0, 0.3065862, 0, 1, 0, -0.3065862, 0, 0.9518429, 0, 0, 0)
+transform = Transform3D(0.9233279, 0.09264196, 0.37266478, -0.09983323, 0.99500376, 0, -0.3708031, -0.037204467, 0.92796373, 0, 0, 0)
 script = ExtResource("14_rdm1n")
 
 [node name="Car" parent="WayOne/PathFollow3D" unique_id=1688270510 instance=ExtResource("13_lao4m")]
