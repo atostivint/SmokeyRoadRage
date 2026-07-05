@@ -853,4 +853,7 @@ transform = Transform3D(0.99044496, 0, -0.13790852, 0, 1, 0, 0.13790852, 0, 0.99
 [node name="ObstacleBicheGen54" parent="ObstacleGroup" unique_id=1157903312 instance=ExtResource("1_r8dhe")]
 transform = Transform3D(0.9904449, 0, -0.1379085, 0, 1, 0, 0.1379085, 0, 0.9904449, -289.04062, 80, 133.25974)
 
+[node name="ObstacleRock" parent="ObstacleGroup" unique_id=1122683472 instance=ExtResource("9_1b3a5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 320.45163, 0.104688324, -825.364)
+
 [node name="worldenvironment_highway" parent="." unique_id=1206275971 instance=ExtResource("11_y8hke")]
