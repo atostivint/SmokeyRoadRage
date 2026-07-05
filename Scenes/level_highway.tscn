@@ -35,6 +35,8 @@ fog_aerial_perspective = 0.25
 fog_height = 30.98
 fog_height_density = 0.01
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_2p81s"]
+size = Vector3(1, 2, 1)
 
 [node name="LevelHighway" type="Node3D" unique_id=1453296238]
 
