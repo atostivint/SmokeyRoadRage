@@ -2,7 +2,7 @@
 
 importer="wav"
 type="AudioStreamWAV"
-uid="uid://3dxyd48c535p"
+uid="uid://daymifvixamr7"
 path="res://.godot/imported/drift.wav-40e229884666f60178ff9527040985f0.sample"
 
 [deps]
@@ -16,7 +16,7 @@ force/8_bit=false
 force/mono=false
 force/max_rate=false
 force/max_rate_hz=44100
-edit/trim=true
+edit/trim=false
 edit/normalize=false
 edit/loop_mode=0
 edit/loop_begin=0
