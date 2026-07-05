@@ -1876,10 +1876,10 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 180.47527, 19.891214, -36.853
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 175.11023, 19.661703, -36.91372)
 
 [node name="Node3D4" parent="ObstacleGroup" unique_id=2116876597 instance=ExtResource("12_5kpa4")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 171.68944, 18.733536, -46.155945)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 169.87189, 18.733536, -46.995457)
 
 [node name="Node3D6" parent="ObstacleGroup" unique_id=416067544 instance=ExtResource("12_5kpa4")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 162.1129, 18.176638, -40.693268)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 161.69446, 18.176638, -43.028564)
 
 [node name="Node3D8" parent="ObstacleGroup" unique_id=887331989 instance=ExtResource("12_5kpa4")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 177.77843, 20.031914, -36.616917)
@@ -1921,7 +1921,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 132.43118, 17.713541, -43.044
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 130.1347, 17.515759, -47.038055)
 
 [node name="Node3D21" parent="ObstacleGroup" unique_id=758382678 instance=ExtResource("12_5kpa4")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 159.16289, 18.985655, -39.350033)
+transform = Transform3D(0.9999857, 0, -0.0053539625, 0, 1, 0, 0.0053539625, 0, 0.9999857, 158.5194, 18.985657, -40.939526)
 
 [node name="Node3D22" parent="ObstacleGroup" unique_id=533478576 instance=ExtResource("12_5kpa4")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 155.28561, 18.861504, -40.398125)
@@ -1946,9 +1946,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 145.3234, 18.21185, -52.78450
 
 [node name="Node3D29" parent="ObstacleGroup" unique_id=883710614 instance=ExtResource("12_5kpa4")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 143.08551, 17.881573, -55.585476)
-
-[node name="Node3D30" parent="ObstacleGroup" unique_id=943509548 instance=ExtResource("12_5kpa4")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 140.9023, 17.630335, -60.473408)
 
 [node name="Node3D31" parent="ObstacleGroup" unique_id=164190352 instance=ExtResource("12_5kpa4")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 132.22725, 16.622856, -61.03613)
