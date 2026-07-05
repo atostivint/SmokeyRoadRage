@@ -142,13 +142,12 @@ func _physics_process(delta: float) -> void:
 		_demarrer_changement_voie(road_lane_agent.change_lane(-1))
 		animation_player.play("GoingLeft")
 		camera_player.play("LeftTilt")
-		audio_stream_player_3d.stream = preload("uid://3dxyd48c535p")
-		audio_stream_player_3d.play(0.2)
+		drift_randomly()
 	elif Input.is_action_just_pressed("turn_right"):
 		_demarrer_changement_voie(road_lane_agent.change_lane(1))
 		animation_player.play("GoingRight")
 		camera_player.play("Right")
-
+		drift_randomly()
 	elif Input.is_action_just_released("turn_right") or Input.is_action_just_released("turn_left"):
 		animation_player.play('GoingForward')
 		camera_player.play("RESET")

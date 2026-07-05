@@ -13,6 +13,7 @@
 [ext_resource type="PackedScene" uid="uid://dq7jstump01" path="res://Scenes/obstacle_stump.tscn" id="10_y8hke"]
 [ext_resource type="PackedScene" uid="uid://b1xu2fwfyfkai" path="res://Visuals/Models/worldenvironment_highway.glb" id="11_y8hke"]
 [ext_resource type="PackedScene" uid="uid://c0y7unayyoqog" path="res://Scenes/rock.tscn" id="12_5kpa4"]
+[ext_resource type="AudioStream" uid="uid://c7i8pcjgb27i1" path="res://Audios/frenetique.wav" id="14_nkac3"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_6ebm8"]
 sky_top_color = Color(0.4893176, 0.77414775, 0.81000453, 1)
@@ -2341,3 +2342,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -34.90953, 46.129585, -35.286
 
 [node name="Node3D26" parent="." unique_id=1070684138 instance=ExtResource("12_5kpa4")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -34.76455, 45.806293, -29.601435)
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=754528780]
+stream = ExtResource("14_nkac3")
+autoplay = true
