@@ -1,5 +1,14 @@
 extends RigidBody3D
 
+@onready var animation_player: AnimationPlayer = $AnimationPlayer
+@onready var deer_player: AnimationPlayer = $DeerPlayer
+@onready var swipper_player: AnimationPlayer = $SwipperPlayer
+@onready var splatter_5: Sprite3D = $Splatter5
+@onready var splatter_4: Sprite3D = $Splatter4
+@onready var splatter_3: Sprite3D = $Splatter3
+@onready var splatter_2: Sprite3D = $Splatter2
+@onready var splatter_1: Sprite3D = $Splatter1
+
 ## Vie de départ (correspond à l'égaliseur radio à terme).
 @export var vie_max: int = 100
 
@@ -46,6 +55,11 @@ var position_route_initialisee := false
 
 func _ready() -> void:
 	vie = vie_max
+	splatter_1.modulate.a = 0
+	splatter_2.modulate.a = 0
+	splatter_3.modulate.a = 0
+	splatter_4.modulate.a = 0
+	splatter_5.modulate.a = 0
 
 	# Le RoadLaneAgent vit dans la scène du niveau, pas dans la voiture : le
 	# script du plugin devine "qui il pilote" via son parent, ce qui pointerait
@@ -65,13 +79,40 @@ func perdre_vie(degats: int) -> void:
 	vie = max(vie - degats, 0)
 	vie_changee.emit(vie, vie_max)
 	print("Vie: ", vie, "/", vie_max)
+	deer_player.play('DeerSlide')
 	if vie <= 0:
 		print("Game Over -> plus de vie")
+
+func ajouter_sang() -> void:
+	for x in range(5) :
+		if splatter_1.modulate.a < 1:
+			splatter_1.modulate.a += 0.5
+		elif splatter_2.modulate.a < 1:
+			splatter_2.modulate.a += 0.5
+		elif splatter_3.modulate.a < 1:
+			splatter_3.modulate.a += 0.5
+		elif splatter_4.modulate.a < 1:
+			splatter_4.modulate.a += 0.5
+		elif splatter_5.modulate.a < 1:
+			splatter_5.modulate.a += 0.5
+			
+func retirer_sang() -> void:
+	if splatter_5.modulate.a > 0:
+		splatter_5.modulate.a -= 0.5
+	elif splatter_4.modulate.a > 0:
+		splatter_4.modulate.a -= 0.5
+	elif splatter_3.modulate.a > 0:
+		splatter_3.modulate.a -= 0.5
+	elif splatter_2.modulate.a > 0:
+		splatter_2.modulate.a -= 0.5
+	elif splatter_1.modulate.a > 0:
+		splatter_1.modulate.a -= 0.5
 
 ## Appelée par les obstacles quand on gagne ou perd des points.
 func ajouter_points(valeur: int) -> void:
 	score += valeur
 	score_change.emit(score)
+	ajouter_sang()
 	print("Score: ", score)
 
 ## Appelée par les obstacles de type DECOR (arbre, pierre...) : mort immédiate.
@@ -88,8 +129,24 @@ func _physics_process(delta: float) -> void:
 	# pas à chaque frame tant que la touche reste enfoncée.
 	if Input.is_action_just_pressed("turn_left"):
 		_demarrer_changement_voie(road_lane_agent.change_lane(-1))
+		animation_player.play("GoingLeft")
 	elif Input.is_action_just_pressed("turn_right"):
 		_demarrer_changement_voie(road_lane_agent.change_lane(1))
+		animation_player.play("GoingRight")
+	elif Input.is_action_just_released("turn_right") or Input.is_action_just_released("turn_left"):
+		animation_player.play('GoingForward')
+	
+	if Input.is_action_just_pressed("Swipping"):
+		match randi_range(1, 4):
+			1:
+				swipper_player.play("Swip1")
+			2:
+				swipper_player.play("Swip2")
+			3:
+				swipper_player.play("Swip3")
+			4:
+				swipper_player.play("Swip4")
+		retirer_sang()
 
 	# Demande au RoadLaneAgent la position "vitesse * delta" mètres plus loin
 	# sur la route ; il gère tout seul le passage à la voie suivante connectée.
@@ -136,3 +193,7 @@ func _demarrer_changement_voie(resultat_changement: int) -> void:
 	var point_sur_nouvelle_voie = road_lane_agent.move_along_lane(0.0)
 	decalage_transition = global_position - point_sur_nouvelle_voie
 	temps_transition = 0.0
+
+
+func _on_swipper_player_animation_finished(anim_name: StringName) -> void:
+	swipper_player.play("RESET")

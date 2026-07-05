@@ -1,11 +1,11 @@
 [gd_scene format=3 uid="uid://bd1gdfi5hbnd8"]
 
-[ext_resource type="Script" path="res://Scripts/obstacle.gd" id="1_15o2q"]
+[ext_resource type="Script" uid="uid://0gq31prbodg7" path="res://Scripts/obstacle.gd" id="1_15o2q"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_2p81s"]
 size = Vector3(1, 2, 1)
 
-[node name="Obstacle" type="Area3D" unique_id=1024901019]
+[node name="Obstacle" type="Area3D" unique_id=1024901019 groups=["obstacle"]]
 script = ExtResource("1_15o2q")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1048116789]

@@ -2,8 +2,8 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://58y7mhtndjeh"
-path.s3tc="res://.godot/imported/Splatter3.png-01d173023f7f15dbb996a1cc66c1db8f.s3tc.ctex"
+uid="uid://dt0iunv0lyvtv"
+path.s3tc="res://.godot/imported/Swipper.png-c1d63f39d5b2f80f8a46805d05968bcb.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://Visuals/Images/Splatter3.png"
-dest_files=["res://.godot/imported/Splatter3.png-01d173023f7f15dbb996a1cc66c1db8f.s3tc.ctex"]
+source_file="res://Visuals/Images/Swipper.png"
+dest_files=["res://.godot/imported/Swipper.png-c1d63f39d5b2f80f8a46805d05968bcb.s3tc.ctex"]
 
 [params]
 

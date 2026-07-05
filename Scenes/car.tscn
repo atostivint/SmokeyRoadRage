@@ -4,9 +4,12 @@
 [ext_resource type="Texture2D" uid="uid://c2wgjw35s3saa" path="res://Visuals/Images/Car.png" id="2_1sfmx"]
 [ext_resource type="Texture2D" uid="uid://bwffnxs37n76n" path="res://Visuals/Images/BearArm.png" id="2_yi23e"]
 [ext_resource type="Texture2D" uid="uid://dle8y3dxnvqcp" path="res://Visuals/Images/Wheel.png" id="3_1sfmx"]
-
-[sub_resource type="BoxShape3D" id="BoxShape3D_ssidi"]
-size = Vector3(2, 1.8, 4)
+[ext_resource type="Texture2D" uid="uid://depp0eqxsnnam" path="res://Visuals/Images/OhDeer_Kill.png" id="5_lh2yg"]
+[ext_resource type="Texture2D" uid="uid://c5kl4iwebmbpr" path="res://Visuals/Images/Splatter1.png" id="5_u41r7"]
+[ext_resource type="Texture2D" uid="uid://c4q5kr5s6vgjf" path="res://Visuals/Images/Splatter4.png" id="5_y3wrf"]
+[ext_resource type="Texture2D" uid="uid://hifj72uxakp3" path="res://Visuals/Images/Splatter2.png" id="6_aky6y"]
+[ext_resource type="Texture2D" uid="uid://58y7mhtndjeh" path="res://Visuals/Images/Splatter3.png" id="6_aqss3"]
+[ext_resource type="Texture2D" uid="uid://dt0iunv0lyvtv" path="res://Visuals/Images/Swipper.png" id="9_argdw"]
 
 [sub_resource type="Animation" id="Animation_u41r7"]
 resource_name = "GoingForward"
@@ -76,6 +79,224 @@ _data = {
 &"RESET": SubResource("Animation_aqss3")
 }
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_ssidi"]
+size = Vector3(2, 1.8, 4)
+
+[sub_resource type="Animation" id="Animation_pkuty"]
+resource_name = "DeerSlide"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("DeadAnimal:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.53333336, 1),
+"transitions": PackedFloat32Array(1, 2.8284183, 1),
+"update": 0,
+"values": [Vector3(0, 1.3437665, -2.2134094), Vector3(0, 1.6396658, -2.2134094), Vector3(0, 3.6691065, -2.2134094)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("DeadAnimal:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(0, 0, -0.07603609), Vector3(0, 0, 0.5964704)]
+}
+
+[sub_resource type="Animation" id="Animation_57vaf"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("DeadAnimal:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, -1.4612317, -2.2134094)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("DeadAnimal:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, 0.5964704)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_57vaf"]
+_data = {
+&"DeerSlide": SubResource("Animation_pkuty"),
+&"RESET": SubResource("Animation_57vaf")
+}
+
+[sub_resource type="Gradient" id="Gradient_y3wrf"]
+offsets = PackedFloat32Array(0)
+colors = PackedColorArray(0.4509804, 0.05490196, 0.07450981, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_y3wrf"]
+gradient = SubResource("Gradient_y3wrf")
+
+[sub_resource type="Animation" id="Animation_lh2yg"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("SwipperPivot:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, -1.1238023, -2.1762462)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("SwipperPivot:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, 2.5736232)]
+}
+
+[sub_resource type="Animation" id="Animation_argdw"]
+resource_name = "Swip1"
+length = 0.16999999999999998
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("SwipperPivot:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.16666667),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(0, -0.14925802, -2.1762462), Vector3(0, -0.14925802, -2.1762462)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("SwipperPivot:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.16666667),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 2.6600976), Vector3(0, 0, 0.33817744)]
+}
+
+[sub_resource type="Animation" id="Animation_6c0gb"]
+resource_name = "Swip2"
+length = 0.16999999999999998
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("SwipperPivot:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.16666667),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(0, 0, -2.1329126), Vector3(0, 0, -4.0002947)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("SwipperPivot:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.17),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(2.4965062, 1.3976704, -2.1762462), Vector3(2.4965062, 1.3976704, -2.1762462)]
+}
+
+[sub_resource type="Animation" id="Animation_15bpq"]
+resource_name = "Swip3"
+length = 0.16999999999999998
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("SwipperPivot:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.16898799),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(0, 0, -0.31094745), Vector3(0, 0, -2.8530445)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("SwipperPivot:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.16898799),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(0.49798, 3.0123549, -2.315046), Vector3(0.49798, 3.0123549, -2.315046)]
+}
+
+[sub_resource type="Animation" id="Animation_7dpuy"]
+resource_name = "Swip4"
+length = 0.16999999999999998
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("SwipperPivot:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.16811916),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 1.0707474), Vector3(0, 0, -0.85487974)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("SwipperPivot:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.16811916),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(-2.4199347, 1.4505932, -2.315046), Vector3(-2.4199347, 1.4505934, -2.315046)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_lh2yg"]
+_data = {
+&"RESET": SubResource("Animation_lh2yg"),
+&"Swip1": SubResource("Animation_argdw"),
+&"Swip2": SubResource("Animation_6c0gb"),
+&"Swip3": SubResource("Animation_15bpq"),
+&"Swip4": SubResource("Animation_7dpuy")
+}
+
 [node name="Car" type="RigidBody3D" unique_id=1137895666]
 gravity_scale = 0.0
 lock_rotation = true
@@ -91,6 +312,9 @@ texture = ExtResource("3_1sfmx")
 transform = Transform3D(0.95838565, 0.28547883, 0, -0.28547883, 0.95838565, 0, 0, 0, 1, 0.50664514, -0.3291068, 0.1901561)
 texture = ExtResource("2_yi23e")
 
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1732774474]
+libraries/ = SubResource("AnimationLibrary_u41r7")
+
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=2033462056]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.9, 0)
 shape = SubResource("BoxShape3D_ssidi")
@@ -103,16 +327,45 @@ texture = ExtResource("2_1sfmx")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.2486312, -0.62200165)
 current = true
 
-[node name="SpotLight3D" type="SpotLight3D" parent="." unique_id=1528842272]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.3368106, 0)
-spot_range = 11.300945
-spot_attenuation = 0.8
-spot_angle = 23.066906
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1732774474]
-libraries/ = SubResource("AnimationLibrary_u41r7")
-
 [node name="AudioListener3D" type="AudioListener3D" parent="." unique_id=278510049]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.1853174, -0.53783065)
 
-[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="." unique_id=103252870]
+[node name="DeadAnimal" type="Sprite3D" parent="." unique_id=749254477]
+transform = Transform3D(0.16546468, -0.112345174, 0, 0.112345174, 0.16546468, 0, 0, 0, 0.19999999, 0, -1.4612317, -2.2134094)
+texture = ExtResource("5_lh2yg")
+
+[node name="DeerPlayer" type="AnimationPlayer" parent="." unique_id=1302474599]
+libraries/ = SubResource("AnimationLibrary_57vaf")
+
+[node name="Splatter5" type="Sprite3D" parent="." unique_id=1650812032]
+transform = Transform3D(1.5, 0, 0, 0, 230.88797, 0, 0, 0, 1.5, 0, 1.3437665, -2.1762462)
+texture = SubResource("GradientTexture1D_y3wrf")
+
+[node name="Splatter4" type="Sprite3D" parent="." unique_id=1410810387]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 1.3437665, -2.1762462)
+texture = ExtResource("5_y3wrf")
+
+[node name="Splatter3" type="Sprite3D" parent="." unique_id=1315109253]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 1.4221935, -2.1762462)
+texture = ExtResource("6_aqss3")
+
+[node name="Splatter2" type="Sprite3D" parent="." unique_id=1286397434]
+transform = Transform3D(0.4, 0, 0, 0, 0.4, 0, 0, 0, 0.4, 0, 1.2568858, -2.1762462)
+texture = ExtResource("6_aky6y")
+
+[node name="Splatter1" type="Sprite3D" parent="." unique_id=684757718]
+transform = Transform3D(0.4, 0, 0, 0, 0.4, 0, 0, 0, 0.4, 0, 1.3477429, -2.1762462)
+texture = ExtResource("5_u41r7")
+
+[node name="SwipperPivot" type="Node3D" parent="." unique_id=991574736]
+transform = Transform3D(-0.22162426, -0.1414201, 0, 0.1414201, -0.22162426, 0, 0, 0, 1, 0, -1.1238023, -2.1762462)
+
+[node name="Swipper" type="Sprite3D" parent="SwipperPivot" unique_id=1113688802]
+transform = Transform3D(1.0000005, 0, 0, 0, 1.0000005, 0, 0, 0, 1, 5.2990847, -0.63317776, 0.17181587)
+texture = ExtResource("9_argdw")
+
+[node name="SwipperPlayer" type="AnimationPlayer" parent="." unique_id=873363451]
+libraries/ = SubResource("AnimationLibrary_lh2yg")
+next/RESET = &"RESET"
+
+[connection signal="animation_finished" from="SwipperPlayer" to="." method="_on_swipper_player_animation_finished"]
