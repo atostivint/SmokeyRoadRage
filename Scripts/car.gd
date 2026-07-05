@@ -9,6 +9,7 @@ extends RigidBody3D
 @onready var splatter_3: Sprite3D = $Splatter3
 @onready var splatter_2: Sprite3D = $Splatter2
 @onready var splatter_1: Sprite3D = $Splatter1
+@onready var audio_stream_player_3d: AudioStreamPlayer3D = $AudioStreamPlayer3D
 
 ## Vie de départ (correspond à l'égaliseur radio à terme).
 @export var vie_max: int = 100
@@ -134,10 +135,13 @@ func _physics_process(delta: float) -> void:
 		_demarrer_changement_voie(road_lane_agent.change_lane(-1))
 		animation_player.play("GoingLeft")
 		camera_player.play("LeftTilt")
+		audio_stream_player_3d.stream = preload("uid://3dxyd48c535p")
+		audio_stream_player_3d.play(0.2)
 	elif Input.is_action_just_pressed("turn_right"):
 		_demarrer_changement_voie(road_lane_agent.change_lane(1))
 		animation_player.play("GoingRight")
 		camera_player.play("Right")
+
 	elif Input.is_action_just_released("turn_right") or Input.is_action_just_released("turn_left"):
 		animation_player.play('GoingForward')
 		camera_player.play("RESET")
@@ -200,6 +204,10 @@ func _demarrer_changement_voie(resultat_changement: int) -> void:
 	decalage_transition = global_position - point_sur_nouvelle_voie
 	temps_transition = 0.0
 
+func drift_randomly() -> void:
+	if randi_range(0, 10) == 0 :
+		audio_stream_player_3d.stream = preload("uid://3dxyd48c535p")
+		audio_stream_player_3d.play(0.2)
 
 func _on_swipper_player_animation_finished(anim_name: StringName) -> void:
 	swipper_player.play("RESET")

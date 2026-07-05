@@ -411,9 +411,6 @@ current = true
 [node name="CameraPlayer" type="AnimationPlayer" parent="." unique_id=752018974]
 libraries/ = SubResource("AnimationLibrary_ht70k")
 
-[node name="AudioListener3D" type="AudioListener3D" parent="." unique_id=278510049]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.1853174, -0.53783065)
-
 [node name="DeadAnimal" type="Sprite3D" parent="." unique_id=749254477]
 transform = Transform3D(0.16546468, -0.112345174, 0, 0.112345174, 0.16546468, 0, 0, 0, 0.19999999, 0, -1.4612317, -2.2134094)
 texture = ExtResource("5_lh2yg")
@@ -451,5 +448,10 @@ texture = ExtResource("9_argdw")
 [node name="SwipperPlayer" type="AnimationPlayer" parent="." unique_id=873363451]
 libraries/ = SubResource("AnimationLibrary_lh2yg")
 next/RESET = &"RESET"
+
+[node name="AudioListener3D" type="AudioListener3D" parent="." unique_id=278510049]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.1853174, -0.53783065)
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="." unique_id=1413182504]
 
 [connection signal="animation_finished" from="SwipperPlayer" to="." method="_on_swipper_player_animation_finished"]

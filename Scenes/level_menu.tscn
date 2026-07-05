@@ -1,5 +1,6 @@
 [gd_scene format=3 uid="uid://bhuj6johl6kmk"]
 
+[ext_resource type="Script" uid="uid://dedwr2rtojdn4" path="res://Scripts/level_menu.gd" id="1_cjntd"]
 [ext_resource type="Texture2D" uid="uid://dlqrpro5y6h3u" path="res://Visuals/Images/MainMenu.png" id="2_ymr0u"]
 [ext_resource type="Texture2D" uid="uid://c5a787n7rivga" path="res://Visuals/Images/PlayButton.png" id="3_64jxr"]
 [ext_resource type="Texture2D" uid="uid://vnhrvu0tkki" path="res://Visuals/Images/QuitButton.png" id="4_51how"]
@@ -14,6 +15,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_cjntd")
 
 [node name="Background" type="TextureRect" parent="." unique_id=2036759668]
 layout_mode = 1
@@ -66,9 +68,12 @@ script = ExtResource("4_iio8b")
 regular_icon = ExtResource("4_51how")
 hover_icon = ExtResource("7_cjntd")
 
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1847570765]
+
 [connection signal="button_down" from="Background/ButtonPlay" to="Background/ButtonPlay" method="play"]
 [connection signal="mouse_entered" from="Background/ButtonPlay" to="Background/ButtonPlay" method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="Background/ButtonPlay" to="Background/ButtonPlay" method="_on_mouse_exited"]
 [connection signal="button_down" from="Background/ButtonQuit" to="Background/ButtonQuit" method="quit_game"]
 [connection signal="mouse_entered" from="Background/ButtonQuit" to="Background/ButtonQuit" method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="Background/ButtonQuit" to="Background/ButtonQuit" method="_on_mouse_exited"]
+[connection signal="finished" from="AudioStreamPlayer" to="." method="play_music"]

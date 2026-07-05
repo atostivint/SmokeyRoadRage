@@ -12,3 +12,5 @@ script = ExtResource("1_15o2q")
 shape = SubResource("BoxShape3D_2p81s")
 
 [node name="Modele" type="Node3D" parent="." unique_id=207732214]
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="." unique_id=1633338702]

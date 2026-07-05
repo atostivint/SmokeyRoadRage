@@ -73,7 +73,8 @@ anchor_right = 0.30629265
 anchor_bottom = 0.47993827
 offset_right = 34.0
 offset_bottom = 42.0
-theme_override_font_sizes/font_size = 30
+theme_override_colors/font_color = Color(0.11651122, 0.3657113, 0.38919085, 1)
+theme_override_font_sizes/font_size = 36
 text = "12"
 horizontal_alignment = 1
 vertical_alignment = 1
@@ -88,11 +89,14 @@ anchor_right = 0.61637604
 anchor_bottom = 0.25617284
 offset_right = 34.0
 offset_bottom = 42.0
+theme_override_colors/font_color = Color(0.55235016, 0.14388826, 0.06444855, 1)
 theme_override_font_sizes/font_size = 24
 text = "12"
 horizontal_alignment = 1
 vertical_alignment = 1
 metadata/_edit_use_anchors_ = true
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=542813009]
 
 [connection signal="button_down" from="TextureRect/ButtonPlay" to="TextureRect/ButtonPlay" method="play"]
 [connection signal="mouse_entered" from="TextureRect/ButtonPlay" to="TextureRect/ButtonPlay" method="_on_mouse_entered"]
@@ -100,3 +104,4 @@ metadata/_edit_use_anchors_ = true
 [connection signal="button_down" from="TextureRect/ButtonQuit" to="TextureRect/ButtonQuit" method="quit_game"]
 [connection signal="mouse_entered" from="TextureRect/ButtonQuit" to="TextureRect/ButtonQuit" method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="TextureRect/ButtonQuit" to="TextureRect/ButtonQuit" method="_on_mouse_exited"]
+[connection signal="finished" from="AudioStreamPlayer" to="." method="play_music"]

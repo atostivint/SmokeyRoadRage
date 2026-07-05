@@ -1,6 +1,8 @@
 @tool
 extends Area3D
 
+@onready var audio_stream_player_3d: AudioStreamPlayer3D = $AudioStreamPlayer3D
+
 # Script partagé par TOUS les obstacles du jeu (arbres, animaux, piétons...).
 # On l'attache à la racine (Area3D) de chaque scène d'obstacle, et on règle
 # les @export ci-dessous dans l'inspecteur pour chaque type d'obstacle.
@@ -125,11 +127,17 @@ func _on_body_entered(body: Node) -> void:
 	touche_par_voiture.emit(self)
 	match categorie:
 		Categorie.DECOR:
+			audio_stream_player_3d.stream = preload("uid://d3nl76jc66h5s")
+			audio_stream_player_3d.play()
 			body.mourir_instantanement()
 		Categorie.ANIMAL_INNOCENT:
+			audio_stream_player_3d.stream = preload("uid://dog7vi5blh81n")
+			audio_stream_player_3d.play()
 			body.perdre_vie(degats)
 			body.ajouter_points(points)
 			Score.score_deer += 1
 		Categorie.PIETON_CIBLE:
+			audio_stream_player_3d.stream = preload("uid://byio5bjq41j7h")
+			audio_stream_player_3d.play()
 			body.ajouter_points(points)
 			Score.score_smoker += 1
