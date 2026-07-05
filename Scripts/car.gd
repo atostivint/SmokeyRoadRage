@@ -212,7 +212,7 @@ func _demarrer_changement_voie(resultat_changement: int) -> void:
 
 func drift_randomly() -> void:
 	if randi_range(0, 10) == 0 :
-		audio_stream_player_3d.stream = preload("uid://3dxyd48c535p")
+		audio_stream_player_3d.stream = preload("res://Audios/drift.wav")
 		audio_stream_player_3d.play(0.2)
 
 func _on_swipper_player_animation_finished(_anim_name: StringName) -> void:
