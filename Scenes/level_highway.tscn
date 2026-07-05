@@ -10,9 +10,18 @@
 [ext_resource type="PackedScene" uid="uid://boiv26se3ucg6" path="res://Scenes/obstacle_campeur.tscn" id="8_j5pv8"]
 [ext_resource type="PackedScene" uid="uid://dq7jrock01" path="res://Scenes/obstacle_rock.tscn" id="9_1b3a5"]
 [ext_resource type="PackedScene" uid="uid://dq7jstump01" path="res://Scenes/obstacle_stump.tscn" id="10_y8hke"]
+[ext_resource type="PackedScene" uid="uid://b1xu2fwfyfkai" path="res://Visuals/Models/worldenvironment_highway.glb" id="11_y8hke"]
 
 [sub_resource type="Environment" id="Environment_c5po0"]
-fog_light_color = Color(0.6368024, 0.53001297, 0.399056, 1)
+glow_enabled = true
+fog_enabled = true
+fog_light_color = Color(0.4847107, 0.16444516, 0.09438457, 1)
+fog_light_energy = 0.75
+fog_sun_scatter = 0.6
+fog_density = 0.0005
+fog_aerial_perspective = 0.25
+fog_height = 2.0
+fog_height_density = 0.01
 
 [node name="LevelHighway" type="Node3D" unique_id=1453296238]
 
@@ -843,3 +852,5 @@ transform = Transform3D(0.99044496, 0, -0.13790852, 0, 1, 0, 0.13790852, 0, 0.99
 
 [node name="ObstacleBicheGen54" parent="ObstacleGroup" unique_id=1157903312 instance=ExtResource("1_r8dhe")]
 transform = Transform3D(0.9904449, 0, -0.1379085, 0, 1, 0, 0.1379085, 0, 0.9904449, -289.04062, 80, 133.25974)
+
+[node name="worldenvironment_highway" parent="." unique_id=1206275971 instance=ExtResource("11_y8hke")]
