@@ -33,6 +33,7 @@ enum Categorie {
 	DECOR,            # arbres, cailloux... impact = Game Over instantané
 	ANIMAL_INNOCENT,  # innocents, impact = dégâts + sang + pénalité de score
 	PIETON_CIBLE,     # campeurs/incendiaires, impact = récompense (score+)
+	END
 }
 
 @export var categorie: Categorie = Categorie.DECOR
@@ -137,7 +138,9 @@ func _on_body_entered(body: Node) -> void:
 			body.ajouter_points(points)
 			Score.score_deer += 1
 		Categorie.PIETON_CIBLE:
-			audio_stream_player_3d.stream = preload("uid://byio5bjq41j7h")
+			audio_stream_player_3d.stream = preload("uid://bqiv32ttdij0i")
 			audio_stream_player_3d.play()
 			body.ajouter_points(points)
 			Score.score_smoker += 1
+		Categorie.END:
+			get_tree().change_scene_to_file("res://Scenes/level_score.tscn")

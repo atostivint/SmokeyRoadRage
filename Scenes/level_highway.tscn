@@ -6,6 +6,7 @@
 [ext_resource type="Material" uid="uid://dpashsuk5lr4x" path="res://addons/road-generator/resources/road_texture.material" id="5_1b3a5"]
 [ext_resource type="Script" uid="uid://uwkx2tk6pt6u" path="res://addons/road-generator/nodes/road_lane_agent.gd" id="6_j5pv8"]
 [ext_resource type="Script" uid="uid://difs1qg4mpcpw" path="res://addons/road-generator/nodes/road_point.gd" id="6_y8hke"]
+[ext_resource type="Script" uid="uid://0gq31prbodg7" path="res://Scripts/obstacle.gd" id="7_5kpa4"]
 [ext_resource type="PackedScene" uid="uid://d40tj2s2qf11" path="res://Scenes/car.tscn" id="7_car"]
 [ext_resource type="PackedScene" uid="uid://boiv26se3ucg6" path="res://Scenes/obstacle_campeur.tscn" id="8_j5pv8"]
 [ext_resource type="PackedScene" uid="uid://dq7jrock01" path="res://Scenes/obstacle_rock.tscn" id="9_1b3a5"]
@@ -33,6 +34,7 @@ fog_density = 0.0025
 fog_aerial_perspective = 0.25
 fog_height = 30.98
 fog_height_density = 0.01
+
 
 [node name="LevelHighway" type="Node3D" unique_id=1453296238]
 
@@ -324,6 +326,19 @@ road_lane_agent = NodePath("../RoadManager/RoadContainer/RoadLaneAgent")
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=223461862]
 environment = SubResource("Environment_c5po0")
+
+[node name="Obstacle" type="Area3D" parent="." unique_id=1024901019 groups=["obstacle"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -285.5347, 81.228134, 92.3428)
+script = ExtResource("7_5kpa4")
+categorie = 3
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Obstacle" unique_id=1048116789]
+transform = Transform3D(20, 0, 0, 0, 20, 0, 0, 0, 20, 0, -1.138649, -7.937912)
+shape = SubResource("BoxShape3D_2p81s")
+
+[node name="Modele" type="Node3D" parent="Obstacle" unique_id=207732214]
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="Obstacle" unique_id=1633338702]
 
 [node name="ObstacleGroup" type="Node3D" parent="." unique_id=1913313803]
 

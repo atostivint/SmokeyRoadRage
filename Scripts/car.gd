@@ -75,6 +75,7 @@ func _ready() -> void:
 	var lane = road_lane_agent.current_lane
 	if lane and lane.lane_next == NodePath("") and lane.lane_prior != NodePath(""):
 		sens_avancee = -1.0
+		#get_tree().change_scene_to_file("res://Scenes/level_score.tscn")
 
 ## Appelée par les obstacles (animaux, piétons) quand ils sont touchés.
 func perdre_vie(degats: int) -> void:
@@ -113,6 +114,8 @@ func retirer_sang() -> void:
 
 ## Appelée par les obstacles quand on gagne ou perd des points.
 func ajouter_points(valeur: int) -> void:
+	audio_stream_player_3d.stream = preload("uid://byio5bjq41j7h")
+	audio_stream_player_3d.play()
 	camera_player.play("RESET")
 	score += valeur
 	score_change.emit(score)
@@ -123,11 +126,15 @@ func ajouter_points(valeur: int) -> void:
 func mourir_instantanement() -> void:
 	vie = 0
 	vie_changee.emit(vie, vie_max)
+	vitesse = 0
+	animation_player.play("LookAtThisPhotograph")
 	print("Game Over -> collision avec le décor")
 
 func _physics_process(delta: float) -> void:
 	if not is_instance_valid(road_lane_agent.current_lane):
 		return
+	if vitesse == 0 and Input.is_anything_pressed():
+		get_tree().change_scene_to_file("res://Scenes/level_menu.tscn")
 
 	# Changement de voie : "just_pressed" = déclenché une seule fois par appui,
 	# pas à chaque frame tant que la touche reste enfoncée.
@@ -209,5 +216,5 @@ func drift_randomly() -> void:
 		audio_stream_player_3d.stream = preload("uid://3dxyd48c535p")
 		audio_stream_player_3d.play(0.2)
 
-func _on_swipper_player_animation_finished(anim_name: StringName) -> void:
+func _on_swipper_player_animation_finished(_anim_name: StringName) -> void:
 	swipper_player.play("RESET")
