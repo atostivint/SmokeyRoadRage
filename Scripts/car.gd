@@ -54,6 +54,8 @@ func _ready() -> void:
 
 	# Au démarrage, on accroche la voiture à la voie de route la plus proche.
 	road_lane_agent.assign_nearest_lane()
+	if road_lane_agent.current_lane == null:
+		pass
 	var lane = road_lane_agent.current_lane
 	if lane and lane.lane_next == NodePath("") and lane.lane_prior != NodePath(""):
 		sens_avancee = -1.0

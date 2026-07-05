@@ -1,0 +1,118 @@
+[gd_scene format=3 uid="uid://d40tj2s2qf11"]
+
+[ext_resource type="Script" uid="uid://cqwwfm7jo1hf1" path="res://Scripts/car.gd" id="1_wqo35"]
+[ext_resource type="Texture2D" uid="uid://c2wgjw35s3saa" path="res://Visuals/Images/Car.png" id="2_1sfmx"]
+[ext_resource type="Texture2D" uid="uid://bwffnxs37n76n" path="res://Visuals/Images/BearArm.png" id="2_yi23e"]
+[ext_resource type="Texture2D" uid="uid://dle8y3dxnvqcp" path="res://Visuals/Images/Wheel.png" id="3_1sfmx"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_ssidi"]
+size = Vector3(2, 1.8, 4)
+
+[sub_resource type="Animation" id="Animation_u41r7"]
+resource_name = "GoingForward"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Wheel:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_yi23e"]
+resource_name = "GoingLeft"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Wheel:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, 0.4086805)]
+}
+
+[sub_resource type="Animation" id="Animation_aky6y"]
+resource_name = "GoingRight"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Wheel:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, -0.4421922)]
+}
+
+[sub_resource type="Animation" id="Animation_aqss3"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Wheel:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_u41r7"]
+_data = {
+&"GoingForward": SubResource("Animation_u41r7"),
+&"GoingLeft": SubResource("Animation_yi23e"),
+&"GoingRight": SubResource("Animation_aky6y"),
+&"RESET": SubResource("Animation_aqss3")
+}
+
+[node name="Car" type="RigidBody3D" unique_id=1137895666]
+gravity_scale = 0.0
+lock_rotation = true
+freeze = true
+freeze_mode = 1
+script = ExtResource("1_wqo35")
+
+[node name="Wheel" type="Sprite3D" parent="." unique_id=1286094733]
+transform = Transform3D(0.38274717, 0, 0, 0, 0.38274717, 0, 0, 0, 1, -0.5286701, 0.44325948, -1.7136841)
+texture = ExtResource("3_1sfmx")
+
+[node name="RightArm" type="Sprite3D" parent="Wheel" unique_id=396304278]
+transform = Transform3D(0.95838565, 0.28547883, 0, -0.28547883, 0.95838565, 0, 0, 0, 1, 0.50664514, -0.3291068, 0.1901561)
+texture = ExtResource("2_yi23e")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=2033462056]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.9, 0)
+shape = SubResource("BoxShape3D_ssidi")
+
+[node name="Board" type="Sprite3D" parent="." unique_id=1190078524]
+transform = Transform3D(0.40142846, 0, 0, 0, 0.40142846, 0, 0, 0, 1, -0.03618145, 1.1929755, -2.118837)
+texture = ExtResource("2_1sfmx")
+
+[node name="Camera3D" type="Camera3D" parent="." unique_id=818640273]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.2486312, -0.62200165)
+current = true
+
+[node name="SpotLight3D" type="SpotLight3D" parent="." unique_id=1528842272]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.3368106, 0)
+spot_range = 11.300945
+spot_attenuation = 0.8
+spot_angle = 23.066906
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1732774474]
+libraries/ = SubResource("AnimationLibrary_u41r7")
+
+[node name="AudioListener3D" type="AudioListener3D" parent="." unique_id=278510049]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.1853174, -0.53783065)
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="." unique_id=103252870]
