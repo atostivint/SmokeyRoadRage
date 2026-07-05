@@ -7,6 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://depp0eqxsnnam" path="res://Visuals/Images/OhDeer_Kill.png" id="5_lh2yg"]
 [ext_resource type="Texture2D" uid="uid://c5kl4iwebmbpr" path="res://Visuals/Images/Splatter1.png" id="5_u41r7"]
 [ext_resource type="Texture2D" uid="uid://c4q5kr5s6vgjf" path="res://Visuals/Images/Splatter4.png" id="5_y3wrf"]
+[ext_resource type="AudioStream" uid="uid://crvcce68gm5gk" path="res://Audios/slide.wav" id="6_6c0gb"]
 [ext_resource type="Texture2D" uid="uid://hifj72uxakp3" path="res://Visuals/Images/Splatter2.png" id="6_aky6y"]
 [ext_resource type="Texture2D" uid="uid://58y7mhtndjeh" path="res://Visuals/Images/Splatter3.png" id="6_aqss3"]
 [ext_resource type="Texture2D" uid="uid://dt0iunv0lyvtv" path="res://Visuals/Images/Swipper.png" id="9_argdw"]
@@ -189,6 +190,21 @@ tracks/1/keys = {
 "update": 0,
 "values": [Vector3(0, 0, -0.07603609), Vector3(0, 0, 0.5964704)]
 }
+tracks/2/type = "audio"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("AudioStreamPlayer3D")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"clips": [{
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("6_6c0gb")
+}],
+"times": PackedFloat32Array(0.23333335)
+}
+tracks/2/use_blend = true
 
 [sub_resource type="Animation" id="Animation_57vaf"]
 length = 0.001
