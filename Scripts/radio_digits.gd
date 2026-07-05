@@ -53,7 +53,6 @@ func _ready() -> void:
 
 func _connecter_obstacles() -> void:
 	var obstacles := get_tree().get_nodes_in_group(groupe_obstacles)
-	print("[RadioDigits] _connecter_obstacles: ", obstacles.size(), " nœud(s) trouvé(s) dans le groupe '", groupe_obstacles, "'.")
 	if obstacles.is_empty():
 		push_warning("RadioDigits: aucun obstacle dans le groupe '%s', vérifie qu'ObstacleGroup y est bien ajouté." % groupe_obstacles)
 		return
@@ -63,10 +62,8 @@ func _connecter_obstacles() -> void:
 		if "categorie" in enfant and enfant.categorie == enfant.Categorie.PIETON_CIBLE:
 			enfant.touche_par_voiture.connect(_on_ennemi_touche)
 			nb_connectes += 1
-	print("[RadioDigits] _connecter_obstacles: ", nb_connectes, " campeur(s)/incendiaire(s) connecté(s) au signal touche_par_voiture.")
 
 func _on_ennemi_touche(obstacle: Node) -> void:
-	print("[RadioDigits] Signal touche_par_voiture reçu de : ", obstacle.name)
 	nombre_touches += 1
 	_mettre_a_jour_affichage()
 
