@@ -323,7 +323,7 @@ vitesse = 30.0
 road_lane_agent = NodePath("../RoadManager/RoadContainer/RoadLaneAgent")
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=223461862]
-environment = SubResource("Environment_y8hke")
+environment = SubResource("Environment_c5po0")
 
 [node name="ObstacleGroup" type="Node3D" parent="." unique_id=1913313803]
 
