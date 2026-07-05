@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="SmokeyRoadRage"
-run/main_scene="uid://bh8jqfoto4b0w"
+run/main_scene="uid://bs0gyeutlcuo8"
 config/features=PackedStringArray("4.7", "Forward Plus")
 config/icon="res://icon.svg"
 

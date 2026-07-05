@@ -81,11 +81,12 @@ func perdre_vie(degats: int) -> void:
 	vie_changee.emit(vie, vie_max)
 	print("Vie: ", vie, "/", vie_max)
 	deer_player.play('DeerSlide')
+	ajouter_sang(3)
 	if vie <= 0:
 		print("Game Over -> plus de vie")
 
-func ajouter_sang() -> void:
-	for x in range(5) :
+func ajouter_sang(number: int) -> void:
+	for x in range(number) :
 		if splatter_1.modulate.a < 1:
 			splatter_1.modulate.a += 0.5
 		elif splatter_2.modulate.a < 1:
@@ -114,7 +115,7 @@ func ajouter_points(valeur: int) -> void:
 	camera_player.play("RESET")
 	score += valeur
 	score_change.emit(score)
-	ajouter_sang()
+	ajouter_sang(2)
 	print("Score: ", score)
 
 ## Appelée par les obstacles de type DECOR (arbre, pierre...) : mort immédiate.
