@@ -1,6 +1,7 @@
 extends RigidBody3D
 
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
+@onready var camera_player: AnimationPlayer = $CameraPlayer
 @onready var deer_player: AnimationPlayer = $DeerPlayer
 @onready var swipper_player: AnimationPlayer = $SwipperPlayer
 @onready var splatter_5: Sprite3D = $Splatter5
@@ -110,6 +111,7 @@ func retirer_sang() -> void:
 
 ## Appelée par les obstacles quand on gagne ou perd des points.
 func ajouter_points(valeur: int) -> void:
+	camera_player.play("RESET")
 	score += valeur
 	score_change.emit(score)
 	ajouter_sang()
@@ -130,11 +132,14 @@ func _physics_process(delta: float) -> void:
 	if Input.is_action_just_pressed("turn_left"):
 		_demarrer_changement_voie(road_lane_agent.change_lane(-1))
 		animation_player.play("GoingLeft")
+		camera_player.play("LeftTilt")
 	elif Input.is_action_just_pressed("turn_right"):
 		_demarrer_changement_voie(road_lane_agent.change_lane(1))
 		animation_player.play("GoingRight")
+		camera_player.play("Right")
 	elif Input.is_action_just_released("turn_right") or Input.is_action_just_released("turn_left"):
 		animation_player.play('GoingForward')
+		camera_player.play("RESET")
 	
 	if Input.is_action_just_pressed("Swipping"):
 		match randi_range(1, 4):

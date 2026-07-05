@@ -82,6 +82,87 @@ _data = {
 [sub_resource type="BoxShape3D" id="BoxShape3D_ssidi"]
 size = Vector3(2, 1.8, 4)
 
+[sub_resource type="Animation" id="Animation_af8kn"]
+resource_name = "LeftTilt"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Camera3D:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, -0.034906585)]
+}
+
+[sub_resource type="Animation" id="Animation_ht70k"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Camera3D:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Camera3D:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 1.249, -0.622)]
+}
+
+[sub_resource type="Animation" id="Animation_rbggc"]
+resource_name = "Right"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Camera3D:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, 0.034906585)]
+}
+
+[sub_resource type="Animation" id="Animation_87q0h"]
+resource_name = "Shake"
+length = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Camera3D:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.033333335, 0.06401682, 0.1),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(0, 1.249, -0.622), Vector3(0.01, 1.249, -0.622), Vector3(0.005, 1.297, -0.622), Vector3(0, 1.289, -0.622)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_ht70k"]
+_data = {
+&"LeftTilt": SubResource("Animation_af8kn"),
+&"RESET": SubResource("Animation_ht70k"),
+&"Right": SubResource("Animation_rbggc"),
+&"Shake": SubResource("Animation_87q0h")
+}
+
 [sub_resource type="Animation" id="Animation_pkuty"]
 resource_name = "DeerSlide"
 tracks/0/type = "value"
@@ -324,8 +405,11 @@ transform = Transform3D(0.40142846, 0, 0, 0, 0.40142846, 0, 0, 0, 1, -0.03618145
 texture = ExtResource("2_1sfmx")
 
 [node name="Camera3D" type="Camera3D" parent="." unique_id=818640273]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.2486312, -0.62200165)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.249, -0.622)
 current = true
+
+[node name="CameraPlayer" type="AnimationPlayer" parent="." unique_id=752018974]
+libraries/ = SubResource("AnimationLibrary_ht70k")
 
 [node name="AudioListener3D" type="AudioListener3D" parent="." unique_id=278510049]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.1853174, -0.53783065)
