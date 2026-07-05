@@ -12,7 +12,6 @@
 [ext_resource type="PackedScene" uid="uid://dq7jstump01" path="res://Scenes/obstacle_stump.tscn" id="10_y8hke"]
 
 [sub_resource type="Environment" id="Environment_c5po0"]
-fog_enabled = true
 fog_light_color = Color(0.6368024, 0.53001297, 0.399056, 1)
 
 [node name="LevelHighway" type="Node3D" unique_id=1453296238]
@@ -298,21 +297,6 @@ prior_mag = 97.26773
 next_mag = 97.26773
 next_pt_init = NodePath("../RP_025")
 
-[node name="ObstacleCampeur3" parent="." unique_id=1264606203 instance=ExtResource("1_r8dhe")]
-transform = Transform3D(0.9988086, 0, 0.04879904, 0, 1, 0, -0.04879904, 0, 0.9988086, 335.71057, 0, -890.45135)
-
-[node name="ObstacleCampeur4" parent="." unique_id=890259127 instance=ExtResource("1_r8dhe")]
-transform = Transform3D(0.95623446, 0, -0.2926015, 0, 1, 0, 0.2926015, 0, 0.95623446, 338.76395, 0, -854.93884)
-
-[node name="ObstacleCampeur5" parent="." unique_id=1465794736 instance=ExtResource("1_r8dhe")]
-transform = Transform3D(0.75421906, 0, -0.6566229, 0, 1, 0, 0.6566229, 0, 0.75421906, 319.1222, 0, -806.28424)
-
-[node name="ObstacleCampeur6" parent="." unique_id=1175007737 instance=ExtResource("1_r8dhe")]
-transform = Transform3D(0.91815877, 0, -0.3962127, 0, 1, 0, 0.3962127, 0, 0.91815877, 280.62955, 0, -766.0403)
-
-[node name="ObstacleCampeur7" parent="." unique_id=767418238 instance=ExtResource("1_r8dhe")]
-transform = Transform3D(0.8089761, 0, 0.58784133, 0, 1, 0, -0.58784133, 0, 0.8089761, 293.84912, 0, -723.85394)
-
 [node name="Car" parent="." unique_id=1137895666 node_paths=PackedStringArray("road_lane_agent") instance=ExtResource("7_car")]
 transform = Transform3D(-0.9921314, 0, -0.12520063, 0, 1, 0, 0.12520063, 0, -0.9921314, 344.6723, 6.7808495, -937.2417)
 vitesse = 30.0
@@ -321,11 +305,542 @@ road_lane_agent = NodePath("../RoadManager/RoadContainer/RoadLaneAgent")
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=223461862]
 environment = SubResource("Environment_c5po0")
 
-[node name="ObstacleCampeur" parent="." unique_id=110335833 instance=ExtResource("8_j5pv8")]
-transform = Transform3D(0.97382545, 0, -0.22729714, 0, 1, 0, 0.22729714, 0, 0.97382545, 338.28006, 0, -868.2483)
+[node name="ObstacleGroup" type="Node3D" parent="."]
 
-[node name="ObstacleRock" parent="." unique_id=812623389 instance=ExtResource("9_1b3a5")]
-transform = Transform3D(0.9400818, 0, -0.34094903, 0, 1, 0, 0.34094903, 0, 0.9400818, 328.32828, 0, -848.51843)
+[node name="ObstacleCampeurGen1" parent="ObstacleGroup" unique_id=635861027 instance=ExtResource("8_j5pv8")]
+transform = Transform3D(0.2482240623553185, 0, 0.9687026452259863, 0, 1, 0, -0.9687026452259863, 0, 0.2482240623553185, 342.06304508876656, 0.0, -921.5735513674985)
 
-[node name="ObstacleStump" parent="." unique_id=519187737 instance=ExtResource("10_y8hke")]
-transform = Transform3D(0.86962575, 0, -0.49371156, 0, 1, 0, 0.49371156, 0, 0.86962575, 319.0374, 0, -818.9787)
+[node name="ObstacleCampeurGen2" parent="ObstacleGroup" unique_id=1302340699 instance=ExtResource("8_j5pv8")]
+transform = Transform3D(-0.6063258354319206, 0, 0.7952163110046118, 0, 1, 0, -0.7952163110046118, 0, -0.6063258354319206, 337.49317414152944, 0.0, -902.1400280364038)
+
+[node name="ObstacleCampeurGen3" parent="ObstacleGroup" unique_id=1432860437 instance=ExtResource("8_j5pv8")]
+transform = Transform3D(-0.8319140320582462, 0, 0.5549045352712404, 0, 1, 0, -0.5549045352712404, 0, -0.8319140320582462, 331.35833367214985, 0.0, -886.5369612161818)
+
+[node name="ObstacleCampeurGen4" parent="ObstacleGroup" unique_id=608389542 instance=ExtResource("8_j5pv8")]
+transform = Transform3D(0.893175063501253, 0, -0.4497091348188656, 0, 1, 0, 0.4497091348188656, 0, 0.893175063501253, 339.58530772571186, 0.0, -864.4256446358324)
+
+[node name="ObstacleRockGen1" parent="ObstacleGroup" unique_id=1780162196 instance=ExtResource("9_1b3a5")]
+transform = Transform3D(0.8895394098697148, 0, -0.4568584444755723, 0, 1, 0, 0.4568584444755723, 0, 0.8895394098697148, 327.2395301729184, 0.0, -846.8666062353425)
+
+[node name="ObstacleStumpGen1" parent="ObstacleGroup" unique_id=1841070901 instance=ExtResource("10_y8hke")]
+transform = Transform3D(0.6568891395612446, 0, -0.7539871738474653, 0, 1, 0, 0.7539871738474653, 0, 0.6568891395612446, 328.96823559153074, 0.0, -817.6396505359188)
+
+[node name="ObstacleCampeurGen5" parent="ObstacleGroup" unique_id=1605983442 instance=ExtResource("8_j5pv8")]
+transform = Transform3D(0.5400754694627974, 0, 0.8416165916167165, 0, 1, 0, -0.8416165916167165, 0, 0.5400754694627974, 307.82397231746705, 0.0, -797.2001459543143)
+
+[node name="ObstacleBicheGen1" parent="ObstacleGroup" unique_id=1943814971 instance=ExtResource("1_r8dhe")]
+transform = Transform3D(0.6944077567334199, 0, -0.7195817308606851, 0, 1, 0, 0.7195817308606851, 0, 0.6944077567334199, 289.8369772519685, 0.0, -785.5578853247662)
+
+[node name="ObstacleCampeurGen6" parent="ObstacleGroup" unique_id=755392397 instance=ExtResource("8_j5pv8")]
+transform = Transform3D(-0.9690552266086273, 0, 0.2468440150834166, 0, 1, 0, -0.2468440150834166, 0, -0.9690552266086273, 278.4326992385873, 0.0, -787.9382889502906)
+
+[node name="ObstacleCampeurGen7" parent="ObstacleGroup" unique_id=578724683 instance=ExtResource("8_j5pv8")]
+transform = Transform3D(0.6905832121679373, 0, -0.7232529481943463, 0, 1, 0, 0.7232529481943463, 0, 0.6905832121679373, 264.35276321270635, 0.0, -772.9465548683015)
+
+[node name="ObstacleRockGen2" parent="ObstacleGroup" unique_id=698295509 instance=ExtResource("9_1b3a5")]
+transform = Transform3D(-0.803314110731685, 0, 0.5955555721335852, 0, 1, 0, -0.5955555721335852, 0, -0.803314110731685, 273.5664222452522, 0.0, -756.916988574715)
+
+[node name="ObstacleBicheGen2" parent="ObstacleGroup" unique_id=699416364 instance=ExtResource("1_r8dhe")]
+transform = Transform3D(0.9784372258753014, 0, -0.2065444141618079, 0, 1, 0, 0.2065444141618079, 0, 0.9784372258753014, 273.7105341953741, 0.0, -737.1172750827373)
+
+[node name="ObstacleStumpGen2" parent="ObstacleGroup" unique_id=660955366 instance=ExtResource("10_y8hke")]
+transform = Transform3D(0.74868931290038, 0, 0.6629210456372289, 0, 1, 0, -0.6629210456372289, 0, 0.74868931290038, 288.74113208724003, 0.0, -717.1266417130771)
+
+[node name="ObstacleCampeurGen8" parent="ObstacleGroup" unique_id=670084674 instance=ExtResource("8_j5pv8")]
+transform = Transform3D(0.9724202314844129, 0, -0.233235703527142, 0, 1, 0, 0.233235703527142, 0, 0.9724202314844129, 291.7376092290739, 0.0, -701.0871313350827)
+
+[node name="ObstacleRockGen3" parent="ObstacleGroup" unique_id=1664538604 instance=ExtResource("9_1b3a5")]
+transform = Transform3D(-0.9166626027829782, 0, 0.39966194797495547, 0, 1, 0, -0.39966194797495547, 0, -0.9166626027829782, 307.58642229720476, 0.0, -691.904451627278)
+
+[node name="ObstacleStumpGen3" parent="ObstacleGroup" unique_id=348347436 instance=ExtResource("10_y8hke")]
+transform = Transform3D(0.9950986489951581, 0, -0.09888720224584743, 0, 1, 0, 0.09888720224584743, 0, 0.9950986489951581, 328.4151370462817, 0.0, -705.0038303511396)
+
+[node name="ObstacleBicheGen3" parent="ObstacleGroup" unique_id=103631985 instance=ExtResource("1_r8dhe")]
+transform = Transform3D(-0.25607507655416584, 0, -0.9666568963017738, 0, 1, 0, 0.9666568963017738, 0, -0.25607507655416584, 352.41254331744335, 0.0, -710.4254622866579)
+
+[node name="ObstacleCampeurGen9" parent="ObstacleGroup" unique_id=1575014482 instance=ExtResource("8_j5pv8")]
+transform = Transform3D(0.3476543739844415, 0, -0.9376227579626499, 0, 1, 0, 0.9376227579626499, 0, 0.3476543739844415, 367.04342143275494, 0.0, -696.941489792387)
+
+[node name="ObstacleBicheGen4" parent="ObstacleGroup" unique_id=1540163745 instance=ExtResource("1_r8dhe")]
+transform = Transform3D(-0.05055758970933651, 0, -0.9987211473293145, 0, 1, 0, 0.9987211473293145, 0, -0.05055758970933651, 386.96231439344365, 0.0, -678.8882371844944)
+
+[node name="ObstacleRockGen4" parent="ObstacleGroup" unique_id=1526439562 instance=ExtResource("9_1b3a5")]
+transform = Transform3D(0.9048971020051892, 0, 0.42563039692039156, 0, 1, 0, -0.42563039692039156, 0, 0.9048971020051892, 412.9121153607549, 0.0, -695.7163399995248)
+
+[node name="ObstacleStumpGen4" parent="ObstacleGroup" unique_id=764183755 instance=ExtResource("10_y8hke")]
+transform = Transform3D(-0.3109421262131514, 0, 0.9504288474925646, 0, 1, 0, -0.9504288474925646, 0, -0.3109421262131514, 412.78078621432655, 0.0, -712.4582026810732)
+
+[node name="ObstacleStumpGen5" parent="ObstacleGroup" unique_id=1290591741 instance=ExtResource("10_y8hke")]
+transform = Transform3D(-0.325650184908238, 0, -0.9454903262695131, 0, 1, 0, 0.9454903262695131, 0, -0.325650184908238, 411.2070868188942, 0.0, -740.8036092994104)
+
+[node name="ObstacleBicheGen5" parent="ObstacleGroup" unique_id=2119415603 instance=ExtResource("1_r8dhe")]
+transform = Transform3D(-0.8776542612995951, 0, 0.4792942703837195, 0, 1, 0, -0.4792942703837195, 0, -0.8776542612995951, 421.0260294613129, 0.0, -769.0020979915842)
+
+[node name="ObstacleCampeurGen10" parent="ObstacleGroup" unique_id=473720866 instance=ExtResource("8_j5pv8")]
+transform = Transform3D(-0.011720635834087176, 0, -0.9999313109887322, 0, 1, 0, 0.9999313109887322, 0, -0.011720635834087176, 405.2234540002033, 0.0, -787.8916713942987)
+
+[node name="ObstacleBicheGen6" parent="ObstacleGroup" unique_id=1787404237 instance=ExtResource("1_r8dhe")]
+transform = Transform3D(0.24757794220633225, 0, 0.9688679799296074, 0, 1, 0, -0.9688679799296074, 0, 0.24757794220633225, 396.80640799806645, 0.0, -768.9731682715667)
+
+[node name="ObstacleBicheGen7" parent="ObstacleGroup" unique_id=1098554532 instance=ExtResource("1_r8dhe")]
+transform = Transform3D(-0.5636122009622233, 0, -0.8260395189859371, 0, 1, 0, 0.8260395189859371, 0, -0.5636122009622233, 405.33500635975105, 0.0, -799.4670888172155)
+
+[node name="ObstacleStumpGen6" parent="ObstacleGroup" unique_id=1116159585 instance=ExtResource("10_y8hke")]
+transform = Transform3D(0.22609872660203773, 0, 0.9741043916485219, 0, 1, 0, -0.9741043916485219, 0, 0.22609872660203773, 417.8236113012604, 0.0, -816.7459349164945)
+
+[node name="ObstacleRockGen5" parent="ObstacleGroup" unique_id=1525615259 instance=ExtResource("9_1b3a5")]
+transform = Transform3D(-0.21069536985559284, 0, 0.9775517690237254, 0, 1, 0, -0.9775517690237254, 0, -0.21069536985559284, 416.8946892654662, 0.0, -838.1100390543642)
+
+[node name="ObstacleCampeurGen11" parent="ObstacleGroup" unique_id=527628276 instance=ExtResource("8_j5pv8")]
+transform = Transform3D(0.15866402976221003, 0, 0.9873326317202408, 0, 1, 0, -0.9873326317202408, 0, 0.15866402976221003, 433.84543983019034, 0.0, -847.8837791100988)
+
+[node name="ObstacleRockGen6" parent="ObstacleGroup" unique_id=1120347521 instance=ExtResource("9_1b3a5")]
+transform = Transform3D(0.03239958010637644, 0, 0.9994749957897548, 0, 1, 0, -0.9994749957897548, 0, 0.03239958010637644, 457.48276071313757, 0.0, -832.2985756008832)
+
+[node name="ObstacleBicheGen8" parent="ObstacleGroup" unique_id=1077998770 instance=ExtResource("1_r8dhe")]
+transform = Transform3D(0.11591081153596755, 0, -0.993259625560746, 0, 1, 0, 0.993259625560746, 0, 0.11591081153596755, 484.2233926640124, 0.0, -825.2158146328196)
+
+[node name="ObstacleStumpGen7" parent="ObstacleGroup" unique_id=1642636096 instance=ExtResource("10_y8hke")]
+transform = Transform3D(-0.8890848686254241, 0, -0.45774239085026014, 0, 1, 0, 0.45774239085026014, 0, -0.8890848686254241, 508.05592421326963, 0.0, -820.9382024208957)
+
+[node name="ObstacleCampeurGen12" parent="ObstacleGroup" unique_id=111907395 instance=ExtResource("8_j5pv8")]
+transform = Transform3D(-0.5565728318115317, 0, -0.8307988221520854, 0, 1, 0, 0.8307988221520854, 0, -0.5565728318115317, 534.7669779460927, 0.7057567098367565, -834.3332280305833)
+
+[node name="ObstacleRockGen7" parent="ObstacleGroup" unique_id=1826812765 instance=ExtResource("9_1b3a5")]
+transform = Transform3D(0.19452866349610778, 0, 0.9808968340648359, 0, 1, 0, -0.9808968340648359, 0, 0.19452866349610778, 538.3698495937388, 3.048460939567645, -807.61420440822)
+
+[node name="ObstacleBicheGen9" parent="ObstacleGroup" unique_id=207843154 instance=ExtResource("1_r8dhe")]
+transform = Transform3D(-0.9936412345678489, 0, -0.11259261506191684, 0, 1, 0, 0.11259261506191684, 0, -0.9936412345678489, 547.5092075585573, 5.967198190145934, -777.2571806467515)
+
+[node name="ObstacleRockGen8" parent="ObstacleGroup" unique_id=386343536 instance=ExtResource("9_1b3a5")]
+transform = Transform3D(0.7230986186510392, 0, 0.6907448064987235, 0, 1, 0, -0.6907448064987235, 0, 0.7230986186510392, 541.0358269334587, 8.059911473546203, -754.8681274256708)
+
+[node name="ObstacleStumpGen8" parent="ObstacleGroup" unique_id=2026739740 instance=ExtResource("10_y8hke")]
+transform = Transform3D(-0.9551032228653151, 0, -0.296273241573194, 0, 1, 0, 0.296273241573194, 0, -0.9551032228653151, 548.7734019560042, 10.644060166167439, -730.2470395278352)
+
+[node name="ObstacleCampeurGen13" parent="ObstacleGroup" unique_id=1066517452 instance=ExtResource("8_j5pv8")]
+transform = Transform3D(0.6446330383768896, 0, -0.7644921489675218, 0, 1, 0, 0.7644921489675218, 0, 0.6446330383768896, 538.603393646521, 13.205252017992786, -731.5308678882685)
+
+[node name="ObstacleStumpGen9" parent="ObstacleGroup" unique_id=695521585 instance=ExtResource("10_y8hke")]
+transform = Transform3D(0.5350992067937954, 0, -0.8447892274932552, 0, 1, 0, 0.8447892274932552, 0, 0.5350992067937954, 532.753926500881, 9.646317471603984, -714.5315979519788)
+
+[node name="ObstacleStumpGen10" parent="ObstacleGroup" unique_id=266394235 instance=ExtResource("10_y8hke")]
+transform = Transform3D(-0.15393579177356864, 0, 0.9880808529725917, 0, 1, 0, -0.9880808529725917, 0, -0.15393579177356864, 516.1455470685421, 6.489475554551743, -687.3080487238636)
+
+[node name="ObstacleStumpGen11" parent="ObstacleGroup" unique_id=397156035 instance=ExtResource("10_y8hke")]
+transform = Transform3D(-0.9683448606182535, 0, -0.24961616717315227, 0, 1, 0, 0.24961616717315227, 0, -0.9683448606182535, 515.0151722868496, 3.906935353121913, -662.247805703526)
+
+[node name="ObstacleBicheGen10" parent="ObstacleGroup" unique_id=428146801 instance=ExtResource("1_r8dhe")]
+transform = Transform3D(-0.7418904782803256, 0, 0.6705210796365687, 0, 1, 0, -0.6705210796365687, 0, -0.7418904782803256, 509.005737763704, 0.8225916931367502, -632.9607091601644)
+
+[node name="ObstacleBicheGen11" parent="ObstacleGroup" unique_id=975312989 instance=ExtResource("1_r8dhe")]
+transform = Transform3D(0.919668135555167, 0, 0.3926964736848078, 0, 1, 0, -0.3926964736848078, 0, 0.919668135555167, 490.45613631241287, 0.0035076635617558435, -642.4456974166225)
+
+[node name="ObstacleStumpGen12" parent="ObstacleGroup" unique_id=544173470 instance=ExtResource("10_y8hke")]
+transform = Transform3D(-0.8632081441292436, 0, 0.504848194915013, 0, 1, 0, -0.504848194915013, 0, -0.8632081441292436, 478.75155502095, 1.6201831620903147, -637.2316286631119)
+
+[node name="ObstacleBicheGen12" parent="ObstacleGroup" unique_id=916862042 instance=ExtResource("1_r8dhe")]
+transform = Transform3D(0.09782690013422259, 0, -0.9952034453367457, 0, 1, 0, 0.9952034453367457, 0, 0.09782690013422259, 497.0544355790666, 3.189770969284034, -621.5083736327155)
+
+[node name="ObstacleBicheGen13" parent="ObstacleGroup" unique_id=741265791 instance=ExtResource("1_r8dhe")]
+transform = Transform3D(0.935979660884954, 0, -0.3520540788141597, 0, 1, 0, 0.3520540788141597, 0, 0.935979660884954, 496.88563648729206, 4.334591044318246, -602.5359855712061)
+
+[node name="ObstacleBicheGen14" parent="ObstacleGroup" unique_id=2147476056 instance=ExtResource("1_r8dhe")]
+transform = Transform3D(0.6051725880770109, 0, -0.7960943026050196, 0, 1, 0, 0.7960943026050196, 0, 0.6051725880770109, 504.5186368696818, 5.544675181552859, -583.5215603131181)
+
+[node name="ObstacleCampeurGen14" parent="ObstacleGroup" unique_id=1677614633 instance=ExtResource("8_j5pv8")]
+transform = Transform3D(-0.9713030437530736, 0, -0.23784532199733222, 0, 1, 0, 0.23784532199733222, 0, -0.9713030437530736, 522.2145018539188, 6.543348708338492, -575.1778282878121)
+
+[node name="ObstacleBicheGen15" parent="ObstacleGroup" unique_id=935064486 instance=ExtResource("1_r8dhe")]
+transform = Transform3D(-0.9959334749715306, 0, 0.09009169457353795, 0, 1, 0, -0.09009169457353795, 0, -0.9959334749715306, 536.2573667155357, 7.533040820075455, -559.7366519599201)
+
+[node name="ObstacleStumpGen13" parent="ObstacleGroup" unique_id=1655167679 instance=ExtResource("10_y8hke")]
+transform = Transform3D(0.29789535098655506, 0, -0.954598533342995, 0, 1, 0, 0.954598533342995, 0, 0.29789535098655506, 560.6069911223765, 8.005074550491727, -568.6544840835568)
+
+[node name="ObstacleCampeurGen15" parent="ObstacleGroup" unique_id=374078593 instance=ExtResource("8_j5pv8")]
+transform = Transform3D(-0.9790826110125, 0, 0.20346311904850334, 0, 1, 0, -0.20346311904850334, 0, -0.9790826110125, 571.3252177436285, 6.59123360087232, -553.6653770420996)
+
+[node name="ObstacleBicheGen16" parent="ObstacleGroup" unique_id=2047614909 instance=ExtResource("1_r8dhe")]
+transform = Transform3D(-0.9771031443212583, 0, -0.2127661753134416, 0, 1, 0, 0.2127661753134416, 0, -0.9771031443212583, 573.1878532503837, 4.727212544342006, -531.9255248243551)
+
+[node name="ObstacleBicheGen17" parent="ObstacleGroup" unique_id=1961549105 instance=ExtResource("1_r8dhe")]
+transform = Transform3D(-0.9010815404244625, 0, 0.4336496944611833, 0, 1, 0, -0.4336496944611833, 0, -0.9010815404244625, 563.5797822761675, 3.3542173018149324, -513.9860223176915)
+
+[node name="ObstacleStumpGen14" parent="ObstacleGroup" unique_id=802984500 instance=ExtResource("10_y8hke")]
+transform = Transform3D(-0.06377070036106575, 0, 0.9979645774151802, 0, 1, 0, -0.9979645774151802, 0, -0.06377070036106575, 545.2326880484508, 2.1191527867870557, -503.08054922057624)
+
+[node name="ObstacleRockGen9" parent="ObstacleGroup" unique_id=1989012491 instance=ExtResource("9_1b3a5")]
+transform = Transform3D(-0.5225015009068893, 0, 0.8526383650470156, 0, 1, 0, -0.8526383650470156, 0, -0.5225015009068893, 514.8486333605881, 0.7028438284788874, -497.8676122231955)
+
+[node name="ObstacleBicheGen18" parent="ObstacleGroup" unique_id=1886543801 instance=ExtResource("1_r8dhe")]
+transform = Transform3D(0.012627758201059332, 0, -0.9999202666827068, 0, 1, 0, 0.9999202666827068, 0, 0.012627758201059332, 490.27697065743365, 0.08875264024056134, -493.2547627529226)
+
+[node name="ObstacleBicheGen19" parent="ObstacleGroup" unique_id=211852976 instance=ExtResource("1_r8dhe")]
+transform = Transform3D(-0.006130710022818541, 0, -0.99998120702072, 0, 1, 0, 0.99998120702072, 0, -0.006130710022818541, 462.7822159660088, 0.14093050689976908, -493.9202417328042)
+
+[node name="ObstacleCampeurGen16" parent="ObstacleGroup" unique_id=1496173819 instance=ExtResource("8_j5pv8")]
+transform = Transform3D(-0.587583653100377, 0, 0.8091634263912426, 0, 1, 0, -0.8091634263912426, 0, -0.587583653100377, 451.25700677370037, 0.9373297832373539, -510.9776838023231)
+
+[node name="ObstacleRockGen10" parent="ObstacleGroup" unique_id=1719703478 instance=ExtResource("9_1b3a5")]
+transform = Transform3D(-0.5788304416312531, 0, -0.8154479258916345, 0, 1, 0, 0.8154479258916345, 0, -0.5788304416312531, 433.96931704081646, 2.8912012955891098, -532.665800887954)
+
+[node name="ObstacleRockGen11" parent="ObstacleGroup" unique_id=143765755 instance=ExtResource("9_1b3a5")]
+transform = Transform3D(0.3128348385724366, 0, 0.9498075403866604, 0, 1, 0, -0.9498075403866604, 0, 0.3128348385724366, 414.74281728090756, 4.517511585100124, -539.1959598636068)
+
+[node name="ObstacleBicheGen20" parent="ObstacleGroup" unique_id=2135292716 instance=ExtResource("1_r8dhe")]
+transform = Transform3D(0.7526424838126559, 0, 0.6584294127393734, 0, 1, 0, -0.6584294127393734, 0, 0.7526424838126559, 399.76054485120653, 6.624066086569169, -555.8518962098688)
+
+[node name="ObstacleRockGen12" parent="ObstacleGroup" unique_id=892196355 instance=ExtResource("9_1b3a5")]
+transform = Transform3D(-0.03922024059496783, 0, 0.9992305903682457, 0, 1, 0, -0.9992305903682457, 0, -0.03922024059496783, 368.9342648472365, 9.48021087011247, -569.3153249100487)
+
+[node name="ObstacleCampeurGen17" parent="ObstacleGroup" unique_id=1706158111 instance=ExtResource("8_j5pv8")]
+transform = Transform3D(-0.7814213988609799, 0, -0.624003683804951, 0, 1, 0, 0.624003683804951, 0, -0.7814213988609799, 343.77820057612325, 10.936425903710406, -556.8283436594004)
+
+[node name="ObstacleRockGen13" parent="ObstacleGroup" unique_id=767950995 instance=ExtResource("9_1b3a5")]
+transform = Transform3D(0.5157007909552656, 0, 0.8567687518858945, 0, 1, 0, -0.8567687518858945, 0, 0.5157007909552656, 324.9467391847953, 11.505929855309736, -541.1613372594294)
+
+[node name="ObstacleRockGen14" parent="ObstacleGroup" unique_id=263201187 instance=ExtResource("9_1b3a5")]
+transform = Transform3D(-0.21805307107475425, 0, -0.9759369130199288, 0, 1, 0, 0.9759369130199288, 0, -0.21805307107475425, 296.27329467166186, 11.525832393352719, -533.8684107257593)
+
+[node name="ObstacleBicheGen21" parent="ObstacleGroup" unique_id=621515080 instance=ExtResource("1_r8dhe")]
+transform = Transform3D(0.4848979740115882, 0, -0.8745707260133152, 0, 1, 0, 0.8745707260133152, 0, 0.4848979740115882, 279.03751068857673, 10.954280345463546, -509.018535224769)
+
+[node name="ObstacleBicheGen22" parent="ObstacleGroup" unique_id=1925990828 instance=ExtResource("1_r8dhe")]
+transform = Transform3D(0.14078232572057936, 0, -0.9900405732921781, 0, 1, 0, 0.9900405732921781, 0, 0.14078232572057936, 263.97850930846107, 10.040797514634352, -484.67284516669093)
+
+[node name="ObstacleRockGen15" parent="ObstacleGroup" unique_id=188195295 instance=ExtResource("9_1b3a5")]
+transform = Transform3D(-0.9154118289389136, 0, -0.4025185504280681, 0, 1, 0, 0.4025185504280681, 0, -0.9154118289389136, 256.06194528494126, 9.263934236122969, -466.10367000808526)
+
+[node name="ObstacleStumpGen15" parent="ObstacleGroup" unique_id=127170279 instance=ExtResource("10_y8hke")]
+transform = Transform3D(-0.6002028702528642, 0, -0.7998478071109675, 0, 1, 0, 0.7998478071109675, 0, -0.6002028702528642, 245.5639599773877, 8.536386749123732, -453.37258350546807)
+
+[node name="ObstacleStumpGen16" parent="ObstacleGroup" unique_id=877792886 instance=ExtResource("10_y8hke")]
+transform = Transform3D(0.7880752917723044, 0, 0.6155788613151019, 0, 1, 0, -0.6155788613151019, 0, 0.7880752917723044, 230.5217924439867, 7.518672084913118, -438.32238963040953)
+
+[node name="ObstacleBicheGen23" parent="ObstacleGroup" unique_id=1618933756 instance=ExtResource("1_r8dhe")]
+transform = Transform3D(0.474620319677679, 0, -0.8801906339816721, 0, 1, 0, 0.8801906339816721, 0, 0.474620319677679, 214.82568873437387, 6.444660971436271, -424.8353835019445)
+
+[node name="ObstacleCampeurGen18" parent="ObstacleGroup" unique_id=1220442601 instance=ExtResource("8_j5pv8")]
+transform = Transform3D(0.447613853238809, 0, 0.8942269501579037, 0, 1, 0, -0.8942269501579037, 0, 0.447613853238809, 199.10643714135608, 5.329313958413315, -412.97148529307634)
+
+[node name="ObstacleStumpGen17" parent="ObstacleGroup" unique_id=792143808 instance=ExtResource("10_y8hke")]
+transform = Transform3D(-0.8358949051249565, 0, -0.548889522204733, 0, 1, 0, 0.548889522204733, 0, -0.8358949051249565, 186.01465277436287, 3.321937359812092, -381.9612818510145)
+
+[node name="ObstacleRockGen16" parent="ObstacleGroup" unique_id=1993288559 instance=ExtResource("9_1b3a5")]
+transform = Transform3D(0.8553765262207298, 0, 0.5180067551591939, 0, 1, 0, -0.5180067551591939, 0, 0.8553765262207298, 155.08586516285237, 1.1233388151827064, -377.2342378864333)
+
+[node name="ObstacleCampeurGen19" parent="ObstacleGroup" unique_id=1323742795 instance=ExtResource("8_j5pv8")]
+transform = Transform3D(0.0029925625108893155, 0, -0.9999955222747842, 0, 1, 0, 0.9999955222747842, 0, 0.0029925625108893155, 135.85245167077846, 0.17365336866360628, -384.6164644138215)
+
+[node name="ObstacleBicheGen24" parent="ObstacleGroup" unique_id=161632768 instance=ExtResource("1_r8dhe")]
+transform = Transform3D(-0.724606817246964, 0, 0.6891625065245678, 0, 1, 0, -0.6891625065245678, 0, -0.724606817246964, 129.63836317189669, 0.01934476558927007, -411.54908518981995)
+
+[node name="ObstacleStumpGen18" parent="ObstacleGroup" unique_id=830872099 instance=ExtResource("10_y8hke")]
+transform = Transform3D(0.2960356265327461, 0, -0.9551768987069172, 0, 1, 0, 0.9551768987069172, 0, 0.2960356265327461, 112.07683100187216, 0.90893651329911, -419.9301976729607)
+
+[node name="ObstacleStumpGen19" parent="ObstacleGroup" unique_id=693282248 instance=ExtResource("10_y8hke")]
+transform = Transform3D(-0.3019348176315229, 0, -0.9533285718480377, 0, 1, 0, 0.9533285718480377, 0, -0.3019348176315229, 106.40552099200536, 2.35057898920188, -389.25777871891506)
+
+[node name="ObstacleRockGen17" parent="ObstacleGroup" unique_id=618308168 instance=ExtResource("9_1b3a5")]
+transform = Transform3D(0.3619449065825487, 0, 0.9321994875556144, 0, 1, 0, -0.9321994875556144, 0, 0.3619449065825487, 115.29482646147663, 3.0408744799915626, -367.0087691017119)
+
+[node name="ObstacleStumpGen20" parent="ObstacleGroup" unique_id=1583072271 instance=ExtResource("10_y8hke")]
+transform = Transform3D(0.051277532769817606, 0, -0.998684441970055, 0, 1, 0, 0.998684441970055, 0, 0.051277532769817606, 128.99484843373614, 3.507222388118958, -350.2615907535615)
+
+[node name="ObstacleStumpGen21" parent="ObstacleGroup" unique_id=1585601606 instance=ExtResource("10_y8hke")]
+transform = Transform3D(0.1775192409972743, 0, 0.9841173299336576, 0, 1, 0, -0.9841173299336576, 0, 0.1775192409972743, 135.73378535341436, 3.860800625432946, -331.90576331873376)
+
+[node name="ObstacleRockGen18" parent="ObstacleGroup" unique_id=1116319161 instance=ExtResource("9_1b3a5")]
+transform = Transform3D(-0.8715562225243103, 0, -0.490295575116842, 0, 1, 0, 0.490295575116842, 0, -0.8715562225243103, 139.75699767984833, 4.148280818304779, -306.24607816959104)
+
+[node name="ObstacleStumpGen22" parent="ObstacleGroup" unique_id=810368909 instance=ExtResource("10_y8hke")]
+transform = Transform3D(-0.02553562834415847, 0, -0.9996739126760631, 0, 1, 0, 0.9996739126760631, 0, -0.02553562834415847, 147.35198690337825, 4.233985955272927, -286.7234654006891)
+
+[node name="ObstacleStumpGen23" parent="ObstacleGroup" unique_id=639885284 instance=ExtResource("10_y8hke")]
+transform = Transform3D(-0.13104380058712012, 0, 0.9913765794730492, 0, 1, 0, -0.9913765794730492, 0, -0.13104380058712012, 170.0122459943293, 4.104632018917504, -272.118100331495)
+
+[node name="ObstacleRockGen19" parent="ObstacleGroup" unique_id=2141994005 instance=ExtResource("9_1b3a5")]
+transform = Transform3D(-0.04471468247937958, 0, -0.9989997983837475, 0, 1, 0, 0.9989997983837475, 0, -0.04471468247937958, 189.26272182031718, 3.473544018280402, -246.59928593492214)
+
+[node name="ObstacleBicheGen25" parent="ObstacleGroup" unique_id=564682477 instance=ExtResource("1_r8dhe")]
+transform = Transform3D(0.39628365996067866, 0, 0.9181281287751559, 0, 1, 0, -0.9181281287751559, 0, 0.39628365996067866, 213.6903158037546, 2.580634943184052, -246.57114724115468)
+
+[node name="ObstacleBicheGen26" parent="ObstacleGroup" unique_id=1366128235 instance=ExtResource("1_r8dhe")]
+transform = Transform3D(-0.165733811417592, 0, 0.9861705246827235, 0, 1, 0, -0.9861705246827235, 0, -0.165733811417592, 232.18551449405697, 1.515216248481978, -249.41529910191005)
+
+[node name="ObstacleBicheGen27" parent="ObstacleGroup" unique_id=707735078 instance=ExtResource("1_r8dhe")]
+transform = Transform3D(-0.9880426932384372, 0, -0.15418053164435325, 0, 1, 0, 0.15418053164435325, 0, -0.9880426932384372, 263.77948096117433, -0.5146755415372529, -250.1882576330433)
+
+[node name="ObstacleRockGen20" parent="ObstacleGroup" unique_id=1620458119 instance=ExtResource("9_1b3a5")]
+transform = Transform3D(-0.32253552118532464, 0, 0.9465573609526847, 0, 1, 0, -0.9465573609526847, 0, -0.32253552118532464, 285.5081100987012, -1.5269251191766697, -261.22955183752754)
+
+[node name="ObstacleRockGen21" parent="ObstacleGroup" unique_id=1288329330 instance=ExtResource("9_1b3a5")]
+transform = Transform3D(0.9869856339258689, 0, -0.1608084525886335, 0, 1, 0, 0.1608084525886335, 0, 0.9869856339258689, 295.3631955099213, -1.9001752728399237, -277.5634893561037)
+
+[node name="ObstacleStumpGen24" parent="ObstacleGroup" unique_id=1965006213 instance=ExtResource("10_y8hke")]
+transform = Transform3D(0.7013993548799262, 0, 0.7127685072827106, 0, 1, 0, -0.7127685072827106, 0, 0.7013993548799262, 315.61125101387205, -2.0295252100879697, -278.6713532272153)
+
+[node name="ObstacleBicheGen28" parent="ObstacleGroup" unique_id=126339745 instance=ExtResource("1_r8dhe")]
+transform = Transform3D(0.7993538852190244, 0, 0.6008605214067992, 0, 1, 0, -0.6008605214067992, 0, 0.7993538852190244, 324.1235656399843, -1.9550540710351219, -296.29746692502596)
+
+[node name="ObstacleStumpGen25" parent="ObstacleGroup" unique_id=642193200 instance=ExtResource("10_y8hke")]
+transform = Transform3D(0.9765940769790299, 0, -0.21509069903061045, 0, 1, 0, 0.21509069903061045, 0, 0.9765940769790299, 341.1603565777865, -1.4959715181162354, -316.1563466607064)
+
+[node name="ObstacleCampeurGen20" parent="ObstacleGroup" unique_id=1865479918 instance=ExtResource("8_j5pv8")]
+transform = Transform3D(-0.9902255325988556, 0, 0.13947542647116273, 0, 1, 0, -0.13947542647116273, 0, -0.9902255325988556, 367.1525449787639, -0.5403503088576451, -330.1877775305121)
+
+[node name="ObstacleBicheGen29" parent="ObstacleGroup" unique_id=1339143491 instance=ExtResource("1_r8dhe")]
+transform = Transform3D(-0.9986556808716721, 0, 0.051834651177922325, 0, 1, 0, -0.051834651177922325, 0, -0.9986556808716721, 381.9714707341704, 0.5594347610853927, -347.67401567069237)
+
+[node name="ObstacleRockGen22" parent="ObstacleGroup" unique_id=2138231805 instance=ExtResource("9_1b3a5")]
+transform = Transform3D(0.3747869790884754, 0, -0.9271109536111277, 0, 1, 0, 0.9271109536111277, 0, 0.3747869790884754, 399.9099199843838, 1.5977543669632053, -352.8731012439123)
+
+[node name="ObstacleStumpGen26" parent="ObstacleGroup" unique_id=1380172653 instance=ExtResource("10_y8hke")]
+transform = Transform3D(-0.8644735666791737, 0, 0.5026782793328036, 0, 1, 0, -0.5026782793328036, 0, -0.8644735666791737, 416.48154795160224, 3.269835057162525, -366.87838342919224)
+
+[node name="ObstacleCampeurGen21" parent="ObstacleGroup" unique_id=1222215973 instance=ExtResource("8_j5pv8")]
+transform = Transform3D(0.15216876528332646, 0, 0.9883545248908147, 0, 1, 0, -0.9883545248908147, 0, 0.15216876528332646, 436.6743965418174, 6.537722487306175, -394.4074820296289)
+
+[node name="ObstacleStumpGen27" parent="ObstacleGroup" unique_id=1947193852 instance=ExtResource("10_y8hke")]
+transform = Transform3D(-0.935933967216602, 0, 0.3521755372114771, 0, 1, 0, -0.3521755372114771, 0, -0.935933967216602, 462.0639163924609, 10.032237475985022, -398.50905820049934)
+
+[node name="ObstacleStumpGen28" parent="ObstacleGroup" unique_id=1409172409 instance=ExtResource("10_y8hke")]
+transform = Transform3D(-0.7245348239193264, 0, -0.6892381946237386, 0, 1, 0, 0.6892381946237386, 0, -0.7245348239193264, 490.9689784453417, 15.746872090226246, -388.84035965127003)
+
+[node name="ObstacleCampeurGen22" parent="ObstacleGroup" unique_id=615106548 instance=ExtResource("8_j5pv8")]
+transform = Transform3D(0.8726879268511397, 0, 0.4882783860957392, 0, 1, 0, -0.4882783860957392, 0, 0.8726879268511397, 507.06963229916386, 20.560744938512347, -366.1237481503766)
+
+[node name="ObstacleBicheGen30" parent="ObstacleGroup" unique_id=105746077 instance=ExtResource("1_r8dhe")]
+transform = Transform3D(0.8908214112264542, 0, 0.4543536214233454, 0, 1, 0, -0.4543536214233454, 0, 0.8908214112264542, 525.5857303778857, 22.723411905905802, -358.86754321400105)
+
+[node name="ObstacleStumpGen29" parent="ObstacleGroup" unique_id=725474568 instance=ExtResource("10_y8hke")]
+transform = Transform3D(-0.8312559339373886, 0, -0.5558898922393533, 0, 1, 0, 0.5558898922393533, 0, -0.8312559339373886, 534.8694868737093, 25.809470475101982, -332.4533508192374)
+
+[node name="ObstacleRockGen23" parent="ObstacleGroup" unique_id=1609654278 instance=ExtResource("9_1b3a5")]
+transform = Transform3D(-0.267169440360018, 0, -0.9636495681199233, 0, 1, 0, 0.9636495681199233, 0, -0.267169440360018, 540.7490225799434, 28.182332080303496, -305.96410366855315)
+
+[node name="ObstacleBicheGen31" parent="ObstacleGroup" unique_id=1442301844 instance=ExtResource("1_r8dhe")]
+transform = Transform3D(0.2354489717772491, 0, -0.9718867123739454, 0, 1, 0, 0.9718867123739454, 0, 0.2354489717772491, 556.4981843448707, 29.864930358435654, -285.0650588473134)
+
+[node name="ObstacleRockGen24" parent="ObstacleGroup" unique_id=1490784977 instance=ExtResource("9_1b3a5")]
+transform = Transform3D(-0.9610571839839999, 0, -0.27634957773216184, 0, 1, 0, 0.27634957773216184, 0, -0.9610571839839999, 549.2063358567267, 30.940693855461635, -262.32921083962367)
+
+[node name="ObstacleRockGen25" parent="ObstacleGroup" unique_id=253351463 instance=ExtResource("9_1b3a5")]
+transform = Transform3D(0.46309831408565527, 0, -0.8863069172081552, 0, 1, 0, 0.8863069172081552, 0, 0.46309831408565527, 562.623695606988, 31.953423891665835, -238.34840296134027)
+
+[node name="ObstacleCampeurGen23" parent="ObstacleGroup" unique_id=1377847335 instance=ExtResource("8_j5pv8")]
+transform = Transform3D(0.26465213853701414, 0, -0.9643439456790223, 0, 1, 0, 0.9643439456790223, 0, 0.26465213853701414, 560.2554404286622, 32.41035318274052, -220.01901077147326)
+
+[node name="ObstacleBicheGen32" parent="ObstacleGroup" unique_id=964380462 instance=ExtResource("1_r8dhe")]
+transform = Transform3D(-0.33335979240676833, 0, 0.9427996864692502, 0, 1, 0, -0.9427996864692502, 0, -0.33335979240676833, 567.1254623651222, 32.7338291033274, -197.68590875126014)
+
+[node name="ObstacleStumpGen30" parent="ObstacleGroup" unique_id=272747564 instance=ExtResource("10_y8hke")]
+transform = Transform3D(-0.9992401504678811, 0, 0.03897591170102816, 0, 1, 0, -0.03897591170102816, 0, -0.9992401504678811, 564.488358628081, 32.74398556286787, -174.23866807379113)
+
+[node name="ObstacleRockGen26" parent="ObstacleGroup" unique_id=1396465182 instance=ExtResource("9_1b3a5")]
+transform = Transform3D(-0.09702335544002519, 0, -0.995282104982883, 0, 1, 0, 0.995282104982883, 0, -0.09702335544002519, 560.4461019189581, 32.10629567721365, -143.5074320132413)
+
+[node name="ObstacleCampeurGen24" parent="ObstacleGroup" unique_id=1548044715 instance=ExtResource("8_j5pv8")]
+transform = Transform3D(0.8398314061969077, 0, 0.542847316623491, 0, 1, 0, -0.542847316623491, 0, 0.8398314061969077, 553.4383677815349, 30.11051085559878, -142.5449349944549)
+
+[node name="ObstacleBicheGen33" parent="ObstacleGroup" unique_id=476219229 instance=ExtResource("1_r8dhe")]
+transform = Transform3D(0.08227320230473396, 0, -0.9966098134087003, 0, 1, 0, 0.9966098134087003, 0, 0.08227320230473396, 563.5559230058153, 29.987847260058707, -163.77330046375508)
+
+[node name="ObstacleStumpGen31" parent="ObstacleGroup" unique_id=697336700 instance=ExtResource("10_y8hke")]
+transform = Transform3D(-0.9348417003847388, 0, 0.35506477609271564, 0, 1, 0, -0.35506477609271564, 0, -0.9348417003847388, 548.8923341934947, 28.89949823908135, -184.5907626579581)
+
+[node name="ObstacleRockGen27" parent="ObstacleGroup" unique_id=1848577710 instance=ExtResource("9_1b3a5")]
+transform = Transform3D(-0.9199487819040243, 0, 0.3920385678390609, 0, 1, 0, -0.3920385678390609, 0, -0.9199487819040243, 533.6713862141976, 26.004178261244537, -193.44836402423746)
+
+[node name="ObstacleBicheGen34" parent="ObstacleGroup" unique_id=847240681 instance=ExtResource("1_r8dhe")]
+transform = Transform3D(0.8401194342729607, 0, 0.542401452945031, 0, 1, 0, -0.542401452945031, 0, 0.8401194342729607, 509.1138821738603, 21.11030672451371, -175.65006943726365)
+
+[node name="ObstacleStumpGen32" parent="ObstacleGroup" unique_id=1589652869 instance=ExtResource("10_y8hke")]
+transform = Transform3D(-0.4806722800106947, 0, 0.8769003131652539, 0, 1, 0, -0.8769003131652539, 0, -0.4806722800106947, 483.3356588813711, 16.90659979449313, -161.7556882210386)
+
+[node name="ObstacleCampeurGen25" parent="ObstacleGroup" unique_id=959964657 instance=ExtResource("8_j5pv8")]
+transform = Transform3D(-0.5220509603602064, 0, -0.8529142951006192, 0, 1, 0, 0.8529142951006192, 0, -0.5220509603602064, 464.6121499394748, 14.191962205944332, -152.1481884121161)
+
+[node name="ObstacleBicheGen35" parent="ObstacleGroup" unique_id=1076731208 instance=ExtResource("1_r8dhe")]
+transform = Transform3D(-0.9508687640457442, 0, -0.30959424019532217, 0, 1, 0, 0.30959424019532217, 0, -0.9508687640457442, 442.5770182718379, 10.940731529063973, -137.6768506227974)
+
+[node name="ObstacleBicheGen36" parent="ObstacleGroup" unique_id=348939737 instance=ExtResource("1_r8dhe")]
+transform = Transform3D(-0.015071854313460139, 0, 0.999886413152791, 0, 1, 0, -0.999886413152791, 0, -0.015071854313460139, 431.07373076876377, 7.915928254999657, -112.25869782795213)
+
+[node name="ObstacleStumpGen33" parent="ObstacleGroup" unique_id=876915262 instance=ExtResource("10_y8hke")]
+transform = Transform3D(0.38220423585999397, 0, 0.9240778766373958, 0, 1, 0, -0.9240778766373958, 0, 0.38220423585999397, 409.7025292347304, 5.851524715349184, -108.55733669509166)
+
+[node name="ObstacleStumpGen34" parent="ObstacleGroup" unique_id=537137994 instance=ExtResource("10_y8hke")]
+transform = Transform3D(0.06273117307396471, 0, -0.9980304604193022, 0, 1, 0, 0.9980304604193022, 0, 0.06273117307396471, 394.0428720309511, 2.90174217228048, -83.92620247401484)
+
+[node name="ObstacleStumpGen35" parent="ObstacleGroup" unique_id=1040847139 instance=ExtResource("10_y8hke")]
+transform = Transform3D(0.8985045954660053, 0, -0.438964112344586, 0, 1, 0, 0.438964112344586, 0, 0.8985045954660053, 372.00917693933485, 0.692916650171805, -72.52826061001487)
+
+[node name="ObstacleStumpGen36" parent="ObstacleGroup" unique_id=1407541947 instance=ExtResource("10_y8hke")]
+transform = Transform3D(0.9857999197173355, 0, -0.16792414443818057, 0, 1, 0, 0.16792414443818057, 0, 0.9857999197173355, 345.5018611303333, 7.682779851241088e-06, -59.89064962892951)
+
+[node name="ObstacleRockGen28" parent="ObstacleGroup" unique_id=1906904941 instance=ExtResource("9_1b3a5")]
+transform = Transform3D(0.833352602124699, 0, 0.5527417484974273, 0, 1, 0, -0.5527417484974273, 0, 0.833352602124699, 323.0057541238473, 8.119411157424357e-06, -72.90936392617805)
+
+[node name="ObstacleRockGen29" parent="ObstacleGroup" unique_id=1887013868 instance=ExtResource("9_1b3a5")]
+transform = Transform3D(0.7397742223179705, 0, 0.6728551850092575, 0, 1, 0, -0.6728551850092575, 0, 0.7397742223179705, 305.12494533723276, 8.765100896989004e-06, -77.2123726915696)
+
+[node name="ObstacleBicheGen37" parent="ObstacleGroup" unique_id=726767927 instance=ExtResource("1_r8dhe")]
+transform = Transform3D(0.9117986100832175, 0, -0.4106376683285555, 0, 1, 0, 0.4106376683285555, 0, 0.9117986100832175, 307.70112603415805, 1.002154203689708e-05, -101.34655132033402)
+
+[node name="ObstacleBicheGen38" parent="ObstacleGroup" unique_id=1892556016 instance=ExtResource("1_r8dhe")]
+transform = Transform3D(-0.14665214230843834, 0, 0.9891881262714113, 0, 1, 0, -0.9891881262714113, 0, -0.14665214230843834, 299.0789845970161, 1.1148538937283206e-05, -116.7226963658811)
+
+[node name="ObstacleStumpGen37" parent="ObstacleGroup" unique_id=2079696778 instance=ExtResource("10_y8hke")]
+transform = Transform3D(-0.7442062234359738, 0, 0.6679499210263937, 0, 1, 0, -0.6679499210263937, 0, -0.7442062234359738, 307.35484715280916, 1.3708683204086691e-05, -149.06549755859345)
+
+[node name="ObstacleRockGen30" parent="ObstacleGroup" unique_id=1796525356 instance=ExtResource("9_1b3a5")]
+transform = Transform3D(-0.1641707494514608, 0, 0.9864319363364842, 0, 1, 0, -0.9864319363364842, 0, -0.1641707494514608, 316.5786614166892, 0.006988935340339255, -125.93660562226405)
+
+[node name="ObstacleStumpGen38" parent="ObstacleGroup" unique_id=673748917 instance=ExtResource("10_y8hke")]
+transform = Transform3D(0.23477340363897056, 0, -0.972050126764959, 0, 1, 0, 0.972050126764959, 0, 0.23477340363897056, 313.22025133983294, 2.661373539892396, -98.08276248224988)
+
+[node name="ObstacleCampeurGen26" parent="ObstacleGroup" unique_id=741143807 instance=ExtResource("8_j5pv8")]
+transform = Transform3D(-0.2048724753671846, 0, 0.9787886742483908, 0, 1, 0, -0.9787886742483908, 0, -0.2048724753671846, 309.17102438686663, 5.660695225525148, -77.28590044352917)
+
+[node name="ObstacleStumpGen39" parent="ObstacleGroup" unique_id=1267007182 instance=ExtResource("10_y8hke")]
+transform = Transform3D(-0.9472647099437133, 0, -0.32045213261149125, 0, 1, 0, 0.32045213261149125, 0, -0.9472647099437133, 296.89078437870035, 8.370140250463988, -65.05645544527023)
+
+[node name="ObstacleCampeurGen27" parent="ObstacleGroup" unique_id=1967455403 instance=ExtResource("8_j5pv8")]
+transform = Transform3D(0.9123118433376561, 0, -0.4094961544457384, 0, 1, 0, 0.4094961544457384, 0, 0.9123118433376561, 283.64032432155403, 13.485800711052653, -36.905141948672984)
+
+[node name="ObstacleCampeurGen28" parent="ObstacleGroup" unique_id=1327926094 instance=ExtResource("8_j5pv8")]
+transform = Transform3D(-0.3239267650812004, 0, -0.946082158622616, 0, 1, 0, 0.946082158622616, 0, -0.3239267650812004, 253.11666781326164, 18.407316206823616, -25.622276434745128)
+
+[node name="ObstacleStumpGen40" parent="ObstacleGroup" unique_id=193731861 instance=ExtResource("10_y8hke")]
+transform = Transform3D(0.15981246232464758, 0, -0.9871473936984958, 0, 1, 0, 0.9871473936984958, 0, 0.15981246232464758, 236.87524527828393, 20.185458770689234, -33.667656917912694)
+
+[node name="ObstacleBicheGen39" parent="ObstacleGroup" unique_id=929097801 instance=ExtResource("1_r8dhe")]
+transform = Transform3D(0.37634077080151285, 0, -0.9264813134826428, 0, 1, 0, 0.9264813134826428, 0, 0.37634077080151285, 212.85011726866233, 20.944773083174447, -35.26798254001974)
+
+[node name="ObstacleRockGen31" parent="ObstacleGroup" unique_id=1178662028 instance=ExtResource("9_1b3a5")]
+transform = Transform3D(0.9730701146135818, 0, 0.23050933179789224, 0, 1, 0, -0.23050933179789224, 0, 0.9730701146135818, 196.7977252149997, 20.598185810193858, -43.69936477443146)
+
+[node name="ObstacleBicheGen40" parent="ObstacleGroup" unique_id=315531328 instance=ExtResource("1_r8dhe")]
+transform = Transform3D(-0.49269838488368617, 0, 0.8702001502717677, 0, 1, 0, -0.8702001502717677, 0, -0.49269838488368617, 182.90652637199338, 19.195120649442657, -69.7010754335884)
+
+[node name="ObstacleStumpGen41" parent="ObstacleGroup" unique_id=132958716 instance=ExtResource("10_y8hke")]
+transform = Transform3D(0.8458116682135253, 0, -0.5334816041006976, 0, 1, 0, 0.5334816041006976, 0, 0.8458116682135253, 163.96963870550044, 17.684946604261942, -92.2857199570043)
+
+[node name="ObstacleBicheGen41" parent="ObstacleGroup" unique_id=669132088 instance=ExtResource("1_r8dhe")]
+transform = Transform3D(0.1967864995910558, 0, -0.9804463644578929, 0, 1, 0, 0.9804463644578929, 0, 0.1967864995910558, 145.28291123235965, 16.808871203828375, -97.49149846263415)
+
+[node name="ObstacleCampeurGen29" parent="ObstacleGroup" unique_id=1495513593 instance=ExtResource("8_j5pv8")]
+transform = Transform3D(-0.35227200989008567, 0, -0.9358976605633755, 0, 1, 0, 0.9358976605633755, 0, -0.35227200989008567, 120.9671386614914, 15.986841866465358, -94.08733189427718)
+
+[node name="ObstacleCampeurGen30" parent="ObstacleGroup" unique_id=1548171684 instance=ExtResource("8_j5pv8")]
+transform = Transform3D(-0.4738363520355015, 0, 0.8806129180801792, 0, 1, 0, -0.8806129180801792, 0, -0.4738363520355015, 96.42896304352327, 15.606787537585827, -106.40935265377954)
+
+[node name="ObstacleBicheGen42" parent="ObstacleGroup" unique_id=780024649 instance=ExtResource("1_r8dhe")]
+transform = Transform3D(-0.7290090461766139, 0, 0.6845040617795219, 0, 1, 0, -0.6845040617795219, 0, -0.7290090461766139, 76.25301758897193, 15.52903473183965, -97.51677693444665)
+
+[node name="ObstacleStumpGen42" parent="ObstacleGroup" unique_id=717141709 instance=ExtResource("10_y8hke")]
+transform = Transform3D(-0.4006073638246324, 0, -0.9162498240378978, 0, 1, 0, 0.9162498240378978, 0, -0.4006073638246324, 43.96563571988126, 16.541692088923426, -99.50377434458474)
+
+[node name="ObstacleBicheGen43" parent="ObstacleGroup" unique_id=1031946628 instance=ExtResource("1_r8dhe")]
+transform = Transform3D(-0.020316119179676986, 0, -0.9997936063515696, 0, 1, 0, 0.9997936063515696, 0, -0.020316119179676986, 38.19385624118519, 19.310146934490742, -74.92766617796529)
+
+[node name="ObstacleBicheGen44" parent="ObstacleGroup" unique_id=1611594040 instance=ExtResource("1_r8dhe")]
+transform = Transform3D(0.06510861402410134, 0, -0.9978781831365292, 0, 1, 0, 0.9978781831365292, 0, 0.06510861402410134, 39.49473396486034, 22.159353377043367, -56.518545681606454)
+
+[node name="ObstacleBicheGen45" parent="ObstacleGroup" unique_id=1590356149 instance=ExtResource("1_r8dhe")]
+transform = Transform3D(-0.9380358614305976, 0, 0.34653819799577185, 0, 1, 0, -0.34653819799577185, 0, -0.9380358614305976, 32.98063570222484, 26.015459346916202, -32.299402020467085)
+
+[node name="ObstacleStumpGen43" parent="ObstacleGroup" unique_id=904965109 instance=ExtResource("10_y8hke")]
+transform = Transform3D(-0.26912825178677563, 0, 0.9631043474568027, 0, 1, 0, -0.9631043474568027, 0, -0.26912825178677563, 35.277359629671764, 30.783533612435384, -4.293328907578436)
+
+[node name="ObstacleStumpGen44" parent="ObstacleGroup" unique_id=1315321261 instance=ExtResource("10_y8hke")]
+transform = Transform3D(-0.9808877210907135, 0, -0.19457460937508422, 0, 1, 0, 0.19457460937508422, 0, -0.9808877210907135, 52.676303227702554, 34.89049545379399, 8.524093934237483)
+
+[node name="ObstacleRockGen32" parent="ObstacleGroup" unique_id=1970113799 instance=ExtResource("9_1b3a5")]
+transform = Transform3D(0.8794109968986331, 0, 0.4760633345824402, 0, 1, 0, -0.4760633345824402, 0, 0.8794109968986331, 57.76640023722746, 39.76086543082618, 4.1358010836741235)
+
+[node name="ObstacleStumpGen45" parent="ObstacleGroup" unique_id=2060285390 instance=ExtResource("10_y8hke")]
+transform = Transform3D(0.057586241804201306, 0, 0.9983405354661645, 0, 1, 0, -0.9983405354661645, 0, 0.057586241804201306, 44.26971661398094, 40.665840296392574, -23.388400423996675)
+
+[node name="ObstacleBicheGen46" parent="ObstacleGroup" unique_id=1532029540 instance=ExtResource("1_r8dhe")]
+transform = Transform3D(-0.9679085122316189, 0, 0.2513028291714482, 0, 1, 0, -0.2513028291714482, 0, -0.9679085122316189, 21.427578299676554, 43.006004115340396, -35.543150257116864)
+
+[node name="ObstacleRockGen33" parent="ObstacleGroup" unique_id=717684292 instance=ExtResource("9_1b3a5")]
+transform = Transform3D(-0.9762626469796705, 0, 0.21659003696441637, 0, 1, 0, -0.21659003696441637, 0, -0.9762626469796705, -1.9279138443106456, 45.24114115501699, -39.71752443030627)
+
+[node name="ObstacleCampeurGen31" parent="ObstacleGroup" unique_id=1048607481 instance=ExtResource("8_j5pv8")]
+transform = Transform3D(0.5465226253654186, 0, 0.8374443384271519, 0, 1, 0, -0.8374443384271519, 0, 0.5465226253654186, -24.953054898969693, 47.54260075177284, -25.781491948761694)
+
+[node name="ObstacleBicheGen47" parent="ObstacleGroup" unique_id=742428853 instance=ExtResource("1_r8dhe")]
+transform = Transform3D(0.9969916625470893, 0, -0.0775088692446933, 0, 1, 0, 0.0775088692446933, 0, 0.9969916625470893, -43.12327846118806, 49.12827352284334, -27.11331597397144)
+
+[node name="ObstacleBicheGen48" parent="ObstacleGroup" unique_id=926122448 instance=ExtResource("1_r8dhe")]
+transform = Transform3D(-0.3216675522807232, 0, 0.9468526737617253, 0, 1, 0, -0.9468526737617253, 0, -0.3216675522807232, -65.55870956996561, 49.50657982105395, -29.801578589267084)
+
+[node name="ObstacleStumpGen46" parent="ObstacleGroup" unique_id=870858920 instance=ExtResource("10_y8hke")]
+transform = Transform3D(-0.7348098030707358, 0, 0.6782732143547661, 0, 1, 0, -0.6782732143547661, 0, -0.7348098030707358, -72.44627865936648, 49.04340222871533, -26.150714561787314)
+
+[node name="ObstacleCampeurGen32" parent="ObstacleGroup" unique_id=734003224 instance=ExtResource("8_j5pv8")]
+transform = Transform3D(0.998945988555465, 0, -0.045901110541520136, 0, 1, 0, 0.045901110541520136, 0, 0.998945988555465, -79.53437903964988, 51.138414893615, -1.6913842194307422)
+
+[node name="ObstacleBicheGen49" parent="ObstacleGroup" unique_id=949986366 instance=ExtResource("1_r8dhe")]
+transform = Transform3D(0.4819604741598116, 0, -0.8761929589694554, 0, 1, 0, 0.8761929589694554, 0, 0.4819604741598116, -84.8444071288569, 53.10376179259558, 18.029850752701414)
+
+[node name="ObstacleStumpGen47" parent="ObstacleGroup" unique_id=1888507918 instance=ExtResource("10_y8hke")]
+transform = Transform3D(-0.030329598330130454, 0, -0.9995399519104441, 0, 1, 0, 0.9995399519104441, 0, -0.030329598330130454, -82.85325588202927, 55.41201640869803, 37.90900614227866)
+
+[node name="ObstacleStumpGen48" parent="ObstacleGroup" unique_id=1822135764 instance=ExtResource("10_y8hke")]
+transform = Transform3D(0.12459519220631796, 0, 0.992207658748445, 0, 1, 0, -0.992207658748445, 0, 0.12459519220631796, -71.94858583456627, 58.571835389122505, 51.03961869084252)
+
+[node name="ObstacleBicheGen50" parent="ObstacleGroup" unique_id=1433353631 instance=ExtResource("1_r8dhe")]
+transform = Transform3D(-0.653652628754015, 0, -0.7567947151790675, 0, 1, 0, 0.7567947151790675, 0, -0.653652628754015, -69.55114852661521, 60.02051111362777, 29.010970264318864)
+
+[node name="ObstacleStumpGen49" parent="ObstacleGroup" unique_id=1515581570 instance=ExtResource("10_y8hke")]
+transform = Transform3D(-0.18164831788079897, 0, -0.9833635587162441, 0, 1, 0, 0.9833635587162441, 0, -0.18164831788079897, -62.73185748855443, 60.572345063629825, 9.994571396526647)
+
+[node name="ObstacleBicheGen51" parent="ObstacleGroup" unique_id=763428304 instance=ExtResource("1_r8dhe")]
+transform = Transform3D(-0.6062296809913713, 0, -0.7952896163568969, 0, 1, 0, 0.7952896163568969, 0, -0.6062296809913713, -80.25844696860216, 62.84884500921159, -15.457031979397167)
+
+[node name="ObstacleBicheGen52" parent="ObstacleGroup" unique_id=883533528 instance=ExtResource("1_r8dhe")]
+transform = Transform3D(0.9781068266211569, 0, 0.20810342552944697, 0, 1, 0, -0.20810342552944697, 0, 0.9781068266211569, -109.01293457245549, 65.63742644914676, -21.199042634483252)
+
+[node name="ObstacleRockGen34" parent="ObstacleGroup" unique_id=1705202931 instance=ExtResource("9_1b3a5")]
+transform = Transform3D(-0.2796574711476455, 0, 0.9600998379498373, 0, 1, 0, -0.9600998379498373, 0, -0.2796574711476455, -127.05721000451896, 67.0447084126772, -28.703167051512157)
+
+[node name="ObstacleStumpGen50" parent="ObstacleGroup" unique_id=1258369334 instance=ExtResource("10_y8hke")]
+transform = Transform3D(0.6745919760202975, 0, 0.7381908058822125, 0, 1, 0, -0.7381908058822125, 0, 0.6745919760202975, -142.24162322847593, 68.34050350552326, -11.054816840014832)
+
+[node name="ObstacleStumpGen51" parent="ObstacleGroup" unique_id=1831920854 instance=ExtResource("10_y8hke")]
+transform = Transform3D(0.9391399112934234, 0, -0.34353489926902747, 0, 1, 0, 0.34353489926902747, 0, 0.9391399112934234, -165.3756320327384, 69.47726618035244, 0.13931302956442404)
+
+[node name="ObstacleStumpGen52" parent="ObstacleGroup" unique_id=347325065 instance=ExtResource("10_y8hke")]
+transform = Transform3D(-0.5289937443285895, 0, 0.8486257234265403, 0, 1, 0, -0.8486257234265403, 0, -0.5289937443285895, -185.10697006251505, 69.89001030847865, 7.96610317808133)
+
+[node name="ObstacleStumpGen53" parent="ObstacleGroup" unique_id=584503857 instance=ExtResource("10_y8hke")]
+transform = Transform3D(0.6337518733479923, 0, 0.7735364005836508, 0, 1, 0, -0.7735364005836508, 0, 0.6337518733479923, -193.18851330034417, 70.00055016822704, 25.201446601785925)
+
+[node name="ObstacleBicheGen53" parent="ObstacleGroup" unique_id=953434681 instance=ExtResource("1_r8dhe")]
+transform = Transform3D(-0.16129350169026874, 0, -0.9869064830633606, 0, 1, 0, 0.9869064830633606, 0, -0.16129350169026874, -202.75913864869864, 70.42835792739051, 55.514722403281986)
+
+[node name="ObstacleStumpGen54" parent="ObstacleGroup" unique_id=891531678 instance=ExtResource("10_y8hke")]
+transform = Transform3D(0.7133489774526505, 0, 0.7008089870765486, 0, 1, 0, -0.7008089870765486, 0, 0.7133489774526505, -225.95636472456786, 71.19703567787647, 71.4116979830558)
+
+[node name="ObstacleStumpGen55" parent="ObstacleGroup" unique_id=2119261471 instance=ExtResource("10_y8hke")]
+transform = Transform3D(0.4394724848355092, 0, -0.898256052065614, 0, 1, 0, 0.898256052065614, 0, 0.4394724848355092, -233.00149775768224, 72.16743798199836, 94.34661449258039)
+
+[node name="ObstacleCampeurGen33" parent="ObstacleGroup" unique_id=1112488868 instance=ExtResource("8_j5pv8")]
+transform = Transform3D(-0.45490528188437485, 0, -0.8905398275842005, 0, 1, 0, 0.8905398275842005, 0, -0.45490528188437485, -239.43514233758293, 73.64093755861253, 123.23505605788228)
+
+[node name="ObstacleCampeurGen34" parent="ObstacleGroup" unique_id=1305613170 instance=ExtResource("8_j5pv8")]
+transform = Transform3D(0.7469230841192996, 0, -0.6649104499176665, 0, 1, 0, 0.6649104499176665, 0, 0.7469230841192996, -257.85500520725793, 75.53324191876018, 146.19407597369369)
+
+[node name="ObstacleCampeurGen35" parent="ObstacleGroup" unique_id=1097006928 instance=ExtResource("8_j5pv8")]
+transform = Transform3D(-0.6594060163540002, 0, -0.751787008132056, 0, 1, 0, 0.751787008132056, 0, -0.6594060163540002, -269.14315115522464, 77.18175896226963, 161.93442984439355)
+
+[node name="ObstacleStumpGen56" parent="ObstacleGroup" unique_id=197381530 instance=ExtResource("10_y8hke")]
+transform = Transform3D(0.7431058503652751, 0, 0.6691738900711096, 0, 1, 0, -0.6691738900711096, 0, 0.7431058503652751, -290.2073798700295, 79.24530061176381, 166.76358230261442)
+
+[node name="ObstacleBicheGen54" parent="ObstacleGroup" unique_id=1157903312 instance=ExtResource("1_r8dhe")]
+transform = Transform3D(-0.3349788259701444, 0, 0.9422256556428846, 0, 1, 0, -0.9422256556428846, 0, -0.3349788259701444, -288.1736490102825, 79.96715446872376, 140.25322156807496)
+
