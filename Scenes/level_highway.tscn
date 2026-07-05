@@ -7,6 +7,13 @@
 [ext_resource type="Script" uid="uid://uwkx2tk6pt6u" path="res://addons/road-generator/nodes/road_lane_agent.gd" id="6_j5pv8"]
 [ext_resource type="Script" uid="uid://difs1qg4mpcpw" path="res://addons/road-generator/nodes/road_point.gd" id="6_y8hke"]
 [ext_resource type="PackedScene" uid="uid://d40tj2s2qf11" path="res://Scenes/car.tscn" id="7_car"]
+[ext_resource type="PackedScene" uid="uid://boiv26se3ucg6" path="res://Scenes/obstacle_campeur.tscn" id="8_j5pv8"]
+[ext_resource type="PackedScene" uid="uid://dq7jrock01" path="res://Scenes/obstacle_rock.tscn" id="9_1b3a5"]
+[ext_resource type="PackedScene" uid="uid://dq7jstump01" path="res://Scenes/obstacle_stump.tscn" id="10_y8hke"]
+
+[sub_resource type="Environment" id="Environment_c5po0"]
+fog_enabled = true
+fog_light_color = Color(0.6368024, 0.53001297, 0.399056, 1)
 
 [node name="LevelHighway" type="Node3D" unique_id=1453296238]
 
@@ -295,7 +302,7 @@ next_pt_init = NodePath("../RP_025")
 transform = Transform3D(0.9988086, 0, 0.04879904, 0, 1, 0, -0.04879904, 0, 0.9988086, 335.71057, 0, -890.45135)
 
 [node name="ObstacleCampeur4" parent="." unique_id=890259127 instance=ExtResource("1_r8dhe")]
-transform = Transform3D(0.97867006, 0, -0.20543835, 0, 1, 0, 0.20543835, 0, 0.97867006, 337.86786, 0, -855.213)
+transform = Transform3D(0.95623446, 0, -0.2926015, 0, 1, 0, 0.2926015, 0, 0.95623446, 338.76395, 0, -854.93884)
 
 [node name="ObstacleCampeur5" parent="." unique_id=1465794736 instance=ExtResource("1_r8dhe")]
 transform = Transform3D(0.75421906, 0, -0.6566229, 0, 1, 0, 0.6566229, 0, 0.75421906, 319.1222, 0, -806.28424)
@@ -310,3 +317,15 @@ transform = Transform3D(0.8089761, 0, 0.58784133, 0, 1, 0, -0.58784133, 0, 0.808
 transform = Transform3D(-0.9921314, 0, -0.12520063, 0, 1, 0, 0.12520063, 0, -0.9921314, 344.6723, 6.7808495, -937.2417)
 vitesse = 30.0
 road_lane_agent = NodePath("../RoadManager/RoadContainer/RoadLaneAgent")
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=223461862]
+environment = SubResource("Environment_c5po0")
+
+[node name="ObstacleCampeur" parent="." unique_id=110335833 instance=ExtResource("8_j5pv8")]
+transform = Transform3D(0.97382545, 0, -0.22729714, 0, 1, 0, 0.22729714, 0, 0.97382545, 338.28006, 0, -868.2483)
+
+[node name="ObstacleRock" parent="." unique_id=812623389 instance=ExtResource("9_1b3a5")]
+transform = Transform3D(0.9400818, 0, -0.34094903, 0, 1, 0, 0.34094903, 0, 0.9400818, 328.32828, 0, -848.51843)
+
+[node name="ObstacleStump" parent="." unique_id=519187737 instance=ExtResource("10_y8hke")]
+transform = Transform3D(0.86962575, 0, -0.49371156, 0, 1, 0, 0.49371156, 0, 0.86962575, 319.0374, 0, -818.9787)

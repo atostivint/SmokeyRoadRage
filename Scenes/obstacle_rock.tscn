@@ -1,0 +1,18 @@
+[gd_scene format=3 uid="uid://dq7jrock01"]
+
+[ext_resource type="PackedScene" uid="uid://bd1gdfi5hbnd8" path="res://Scenes/obstacle.tscn" id="1_base"]
+[ext_resource type="PackedScene" uid="uid://d2cr0nef03hp2" path="res://Visuals/Models/Homemade/Rock01.glb" id="2_modele"]
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_rock"]
+height = 2.671875
+radius = 1.5625
+
+[node name="ObstacleRock" instance=ExtResource("1_base")]
+categorie = 0
+
+[node name="CollisionShape3D" parent="." index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.3105469, 0)
+shape = SubResource("CylinderShape3D_rock")
+
+[node name="Rock01" parent="Modele" instance=ExtResource("2_modele")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.092596054, 0, 0)
