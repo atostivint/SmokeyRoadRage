@@ -57,6 +57,9 @@ func _ready() -> void:
 	if Engine.is_editor_hint():
 		return
 	body_entered.connect(_on_body_entered)
+	# Rejoint le groupe "obstacles" pour que l'écran de l'autoradio (radio_digits.gd)
+	# puisse retrouver tous les obstacles du niveau sans NodePath direct.
+	add_to_group("obstacles")
 
 func _physics_process(delta: float) -> void:
 	if Engine.is_editor_hint():
@@ -123,8 +126,10 @@ func orienter_perpendiculaire(voie: Path3D, offset: float) -> void:
 	look_at(global_position + perpendiculaire, Vector3.UP)
 
 func _on_body_entered(body: Node) -> void:
+	print("[Obstacle] ", name, " : body_entered par '", body.name, "' (catégorie attendue : Car).")
 	if body.name != "Car":
 		return
+	print("[Obstacle] ", name, " : c'est la voiture, émission du signal touche_par_voiture.")
 	touche_par_voiture.emit(self)
 	match categorie:
 		Categorie.DECOR:

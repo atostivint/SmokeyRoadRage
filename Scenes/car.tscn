@@ -8,9 +8,11 @@
 [ext_resource type="Texture2D" uid="uid://c5kl4iwebmbpr" path="res://Visuals/Images/Splatter1.png" id="5_u41r7"]
 [ext_resource type="Texture2D" uid="uid://c4q5kr5s6vgjf" path="res://Visuals/Images/Splatter4.png" id="5_y3wrf"]
 [ext_resource type="AudioStream" uid="uid://crvcce68gm5gk" path="res://Audios/slide.wav" id="6_6c0gb"]
+[ext_resource type="Script" uid="uid://bd4k6taevf8eo" path="res://Scripts/radio_digits.gd" id="6_15bpq"]
 [ext_resource type="Texture2D" uid="uid://hifj72uxakp3" path="res://Visuals/Images/Splatter2.png" id="6_aky6y"]
 [ext_resource type="Texture2D" uid="uid://58y7mhtndjeh" path="res://Visuals/Images/Splatter3.png" id="6_aqss3"]
 [ext_resource type="Texture2D" uid="uid://dt0iunv0lyvtv" path="res://Visuals/Images/Swipper.png" id="9_argdw"]
+[ext_resource type="Texture2D" uid="uid://bkadmrfkai52o" path="res://Visuals/Images/counter.png" id="11_6c0gb"]
 [ext_resource type="Texture2D" uid="uid://wyo27o0v5ca" path="res://Visuals/Images/TryAgain.png" id="12_15bpq"]
 
 [sub_resource type="Animation" id="Animation_u41r7"]
@@ -449,9 +451,25 @@ shape = SubResource("BoxShape3D_ssidi")
 transform = Transform3D(0.40142846, 0, 0, 0, 0.40142846, 0, 0, 0, 1, -0.03618145, 1.1929755, -2.118837)
 texture = ExtResource("2_1sfmx")
 
+[node name="Radio" type="Sprite3D" parent="Board" unique_id=1520452140]
+transform = Transform3D(1.1362388, 0, 0, 0, 1.1362388, 0, 0, 0, 1, 2.2535822, -1.5903163, 0.49638748)
+texture = ExtResource("11_6c0gb")
+script = ExtResource("6_15bpq")
+
+[node name="EcranViewport" type="SubViewport" parent="Board/Radio" unique_id=327991194]
+transparent_bg = true
+size = Vector2i(76, 36)
+render_target_update_mode = 4
+
+[node name="Chiffres" type="HBoxContainer" parent="Board/Radio/EcranViewport" unique_id=2039651698]
+
+[node name="Ecran" type="Sprite3D" parent="Board/Radio" unique_id=679397485]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.15, -0.035, 0.02)
+no_depth_test = true
+render_priority = 1
+
 [node name="Camera3D" type="Camera3D" parent="." unique_id=818640273]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.249, -0.622)
-current = true
 
 [node name="CameraPlayer" type="AnimationPlayer" parent="." unique_id=752018974]
 libraries/ = SubResource("AnimationLibrary_ht70k")
