@@ -12,16 +12,31 @@
 [ext_resource type="PackedScene" uid="uid://dq7jstump01" path="res://Scenes/obstacle_stump.tscn" id="10_y8hke"]
 [ext_resource type="PackedScene" uid="uid://b1xu2fwfyfkai" path="res://Visuals/Models/worldenvironment_highway.glb" id="11_y8hke"]
 
-[sub_resource type="Environment" id="Environment_c5po0"]
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_y8hke"]
+sky_top_color = Color(0.22745098, 0.43137255, 0.64705884, 1)
+sky_horizon_color = Color(0.7882353, 0.84705883, 0.9098039, 1)
+ground_bottom_color = Color(0.3529412, 0.2901961, 0.22745098, 1)
+ground_horizon_color = Color(0.7882353, 0.84705883, 0.9098039, 1)
+
+[sub_resource type="Sky" id="Sky_5kpa4"]
+sky_material = SubResource("ProceduralSkyMaterial_y8hke")
+
+[sub_resource type="Environment" id="Environment_y8hke"]
+background_mode = 2
+sky = SubResource("Sky_5kpa4")
+ambient_light_source = 3
 glow_enabled = true
 fog_enabled = true
-fog_light_color = Color(0.4847107, 0.16444516, 0.09438457, 1)
-fog_light_energy = 0.75
-fog_sun_scatter = 0.6
-fog_density = 0.0005
-fog_aerial_perspective = 0.25
+fog_light_color = Color(0.4862745, 0.16470589, 0.09411765, 1)
+fog_sun_scatter = 0.53
+fog_density = 0.005
+fog_aerial_perspective = 0.268
 fog_height = 2.0
-fog_height_density = 0.01
+fog_height_density = 0.5358
+adjustment_enabled = true
+adjustment_brightness = 1.04
+adjustment_contrast = 0.945
+adjustment_saturation = 0.93
 
 [node name="LevelHighway" type="Node3D" unique_id=1453296238]
 
@@ -312,7 +327,7 @@ vitesse = 30.0
 road_lane_agent = NodePath("../RoadManager/RoadContainer/RoadLaneAgent")
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=223461862]
-environment = SubResource("Environment_c5po0")
+environment = SubResource("Environment_y8hke")
 
 [node name="ObstacleGroup" type="Node3D" parent="." unique_id=1913313803]
 
@@ -857,3 +872,8 @@ transform = Transform3D(0.9904449, 0, -0.1379085, 0, 1, 0, 0.1379085, 0, 0.99044
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 320.45163, 0.104688324, -825.364)
 
 [node name="worldenvironment_highway" parent="." unique_id=1206275971 instance=ExtResource("11_y8hke")]
+
+[node name="Sun" type="DirectionalLight3D" parent="." unique_id=1093676803]
+transform = Transform3D(0.8660254, 0.38302222, -0.32139382, 0, 0.64278764, 0.76604444, 0.5, -0.66341394, 0.5566704, 279.9572, 587.2489, -257.05414)
+light_energy = 1.2
+shadow_enabled = true
