@@ -3,20 +3,19 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://dt0iunv0lyvtv"
-path.s3tc="res://.godot/imported/Swipper.png-c1d63f39d5b2f80f8a46805d05968bcb.s3tc.ctex"
+path="res://.godot/imported/Swipper.png-c1d63f39d5b2f80f8a46805d05968bcb.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
-"vram_texture": true
+"vram_texture": false
 }
 
 [deps]
 
 source_file="res://Visuals/Images/Swipper.png"
-dest_files=["res://.godot/imported/Swipper.png-c1d63f39d5b2f80f8a46805d05968bcb.s3tc.ctex"]
+dest_files=["res://.godot/imported/Swipper.png-c1d63f39d5b2f80f8a46805d05968bcb.ctex"]
 
 [params]
 
-compress/mode=2
+compress/mode=0
 compress/high_quality=false
 compress/lossy_quality=0.7
 compress/uastc_level=0
