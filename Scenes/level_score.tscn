@@ -1,0 +1,102 @@
+[gd_scene format=3 uid="uid://lpxrlq8ekcb0"]
+
+[ext_resource type="Script" uid="uid://o4hjsr5ujgbv" path="res://Scripts/button_hovering.gd" id="1_ehkxe"]
+[ext_resource type="Script" uid="uid://cqfas12elk6mn" path="res://Scripts/level_score.gd" id="1_fqyr6"]
+[ext_resource type="Texture2D" uid="uid://d345yermip5ww" path="res://Visuals/Images/EndScreen.png" id="1_osws8"]
+[ext_resource type="Texture2D" uid="uid://cv7onmqsukgm4" path="res://Visuals/Images/PlayAGain.png" id="2_3hhsg"]
+[ext_resource type="Texture2D" uid="uid://divktwp8tobfi" path="res://Visuals/Images/PlayAGainHover.png" id="4_senac"]
+[ext_resource type="Texture2D" uid="uid://yavcskca8n8i" path="res://Visuals/Images/EndQuit.png" id="4_sp4hr"]
+[ext_resource type="Texture2D" uid="uid://bgd625khwxlij" path="res://Visuals/Images/EndQuitHover.png" id="6_senac"]
+
+[node name="Control" type="Control" unique_id=828045128]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_fqyr6")
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=1975976106]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -16.0
+offset_top = 10.0
+offset_right = 151.0
+offset_bottom = 10.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_osws8")
+
+[node name="ButtonPlay" type="Button" parent="TextureRect" unique_id=1384072280]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.437
+anchor_top = 0.69000006
+anchor_right = 0.55200005
+anchor_bottom = 0.827
+offset_left = -0.40301514
+offset_top = -0.120025635
+offset_right = -0.08807373
+offset_bottom = 0.104003906
+icon = ExtResource("2_3hhsg")
+flat = true
+script = ExtResource("1_ehkxe")
+regular_icon = ExtResource("2_3hhsg")
+hover_icon = ExtResource("4_senac")
+
+[node name="ButtonQuit" type="Button" parent="TextureRect" unique_id=1838986675]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.55300003
+anchor_top = 0.63100004
+anchor_right = 0.63000005
+anchor_bottom = 0.75500005
+offset_left = -0.40704346
+offset_top = 0.111968994
+offset_right = 0.029907227
+offset_bottom = -0.24002075
+icon = ExtResource("4_sp4hr")
+flat = true
+script = ExtResource("1_ehkxe")
+regular_icon = ExtResource("4_sp4hr")
+hover_icon = ExtResource("6_senac")
+
+[node name="SmokerScore" type="Label" parent="TextureRect" unique_id=636921615]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.30629265
+anchor_top = 0.47993827
+anchor_right = 0.30629265
+anchor_bottom = 0.47993827
+offset_right = 34.0
+offset_bottom = 42.0
+theme_override_font_sizes/font_size = 30
+text = "12"
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="DeerScore" type="Label" parent="TextureRect" unique_id=1644639236]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.61637604
+anchor_top = 0.25617284
+anchor_right = 0.61637604
+anchor_bottom = 0.25617284
+offset_right = 34.0
+offset_bottom = 42.0
+theme_override_font_sizes/font_size = 24
+text = "12"
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[connection signal="button_down" from="TextureRect/ButtonPlay" to="TextureRect/ButtonPlay" method="play"]
+[connection signal="mouse_entered" from="TextureRect/ButtonPlay" to="TextureRect/ButtonPlay" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="TextureRect/ButtonPlay" to="TextureRect/ButtonPlay" method="_on_mouse_exited"]
+[connection signal="button_down" from="TextureRect/ButtonQuit" to="TextureRect/ButtonQuit" method="quit_game"]
+[connection signal="mouse_entered" from="TextureRect/ButtonQuit" to="TextureRect/ButtonQuit" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="TextureRect/ButtonQuit" to="TextureRect/ButtonQuit" method="_on_mouse_exited"]

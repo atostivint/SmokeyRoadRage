@@ -129,5 +129,7 @@ func _on_body_entered(body: Node) -> void:
 		Categorie.ANIMAL_INNOCENT:
 			body.perdre_vie(degats)
 			body.ajouter_points(points)
+			Score.score_deer += 1
 		Categorie.PIETON_CIBLE:
 			body.ajouter_points(points)
+			Score.score_smoker += 1

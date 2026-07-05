@@ -15,4 +15,6 @@ func quit_game() -> void:
 	get_tree().quit()
 
 func play() -> void:
+	Score.score_deer = 0
+	Score.score_smoker = 0
 	get_tree().change_scene_to_file("res://Scenes/level_highway.tscn")
