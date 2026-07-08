@@ -1,0 +1,10 @@
+[gd_scene format=3 uid="uid://crl3xmmfeextf"]
+
+[ext_resource type="Texture2D" uid="uid://br2bd4r6v50kr" path="res://Visuals/Images/TreeBillBoard.png" id="1_6clww"]
+
+[node name="Tree" type="Node3D" unique_id=161656606]
+
+[node name="Sprite3D" type="Sprite3D" parent="." unique_id=1468846585]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, 17.458376)
+billboard = 1
+texture = ExtResource("1_6clww")
